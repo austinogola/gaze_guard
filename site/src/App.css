@@ -1,0 +1,59 @@
+/* @import url('./fonts/MonumentExtended-Regular.otf') */
+
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('./fonts/MonumentExtended-Regular.otf') format('opentype'),
+    /* Add additional font formats if necessary */
+    /* Specify the correct path to the font files */
+  }
+
+  @font-face {
+    font-family: 'MonumentExtendedBold';
+    src: url('./fonts/MonumentExtended-Ultrabold.otf') format('opentype'),
+    /* Add additional font formats if necessary */
+    /* Specify the correct path to the font files */
+  }
+
+  #home{
+    font-family: "MonumentExtended";
+    font-weight:400;
+  }
+
+  #navbar #light{
+    /* font-weight:400; */
+  }
+  
+  #home #bold{
+    font-family: "MonumentExtendedBold";
+    font-weight:1000;
+  }
+
+  #about{
+    font-family: "MonumentExtended";
+  }
+  #about button{
+    font-family: "MonumentExtended";
+  }
+
+  #explore{
+    font-family: "MonumentExtended";
+  }
+
+  #howWorks{
+    font-family: "MonumentExtended";
+  }
+
+  #tutorial{
+    font-family: "MonumentExtended";
+  }
+
+  #pricing{
+    font-family: "MonumentExtended";
+  }
+  #pricing button{
+    font-family: "MonumentExtended";
+  }
+
+  #footer{
+    font-family: "MonumentExtended";
+  }
