@@ -22,7 +22,24 @@
   #navbar #light{
     /* font-weight:400; */
   }
+
+  a[href]{
+    transition: 0.2s ease-in-out;
+  }
+  a[href]:hover{
+    color: #2c75ff;
+  }
+
+  a[href] button{
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+  }
   
+  a[href] button:hover{
+    background-color: #101f6e;
+  }
+
+
   #home #bold{
     font-family: "MonumentExtendedBold";
     font-weight:1000;

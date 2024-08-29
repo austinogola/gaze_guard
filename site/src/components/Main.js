@@ -31,20 +31,28 @@ const Main=()=>{
             <Navbar/>
          </Box>
 
-         <Box zIndex={2} color='white' textAlign='center' pt='40px' lineHeight='100px'>
-            <Text fontSize='7rem' fontWeight={900} margin='0px' padding='0px' id='bold'>YOUR GAZE</Text>
-            <Text fontSize='7rem' fontWeight={900} margin='0px' padding='0px' id='bold'>IS AN</Text>
-            <Text fontSize='7rem' fontWeight={900} color='#2C75FF' margin='0px' id='bold'>AMMANAH</Text>
+         <Box zIndex={2} color='white' textAlign='center' pt='40px' lineHeight='90px'>
+            <Text fontSize='6rem' fontWeight={900} margin='0px' padding='0px' id='bold'>
+            SHIELD YOUR </Text>
+            <Text fontSize='6rem' fontWeight={900} color='#2C75FF' margin='0px' id='bold'>
+            GAZE  <Text as='span' fontSize='6rem' fontWeight={900}
+             margin='0px' padding='0px' id='bold' color='white'>
+            FROM</Text>
+            </Text>
+            <Text fontSize='6rem' fontWeight={900} color='#2C75FF' margin='0px' id='bold'>
+            HARAM
+            </Text>
+            <Text fontSize='6rem' fontWeight={900} margin='0px' padding='0px' id='bold'>
+            CONTENT. </Text>
          </Box>
          <Flex justifyContent='center' alignItems='center' mt='10px' >
-            <Text textAlign='center' margin='0px' w='50%' color='white'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porta ante non ante
-            dignissim aliquadm. Pellentesque nunc leo, pretium a lorem vel, ornare mollis leo.
+            <Text textAlign='center' margin='0px' w='50%' color='white' fontWeight={400}>
+            Use Our AI trained smart filter to protect you from unwanted content, so you can surf safely.
             </Text>
          </Flex>
 
          <Flex justifyContent='center' alignItems='center' 
-         position='absolute' bottom='40px' left='50%'>
+         position='absolute' bottom='20px' left='50%'>
             <Image src={arrowsImage} w='70px' cursor='pointer'/>
          </Flex>
          
