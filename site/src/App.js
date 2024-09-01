@@ -10,6 +10,9 @@ import Tutorial from './components/Tutorial';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 import mainImage from './components/Images/main.png'
+import ShowCase from './components/ShowCase';
+import Features from './components/Features'
+import Download from './components/Download';
 
 
 function App() {
@@ -17,11 +20,14 @@ function App() {
     <Box className="App" padding='0px'  overflow='hidden' margin='0px'>
       {/* <Navbar/> */}
       <Main/>
-      <AboutUs/>
-      <OurSpecialty/>
-      <HowWorks/>
+      <ShowCase/>
+      <Features/>
+      <Download/>
+      {/* <AboutUs/> */}
+      {/* <OurSpecialty/> */}
+      {/* <HowWorks/> */}
       <Tutorial/>
-      <Pricing/>
+      {/* <Pricing/> */}
       <Footer/>
       {/* 
        */}

@@ -14,9 +14,10 @@
     /* Specify the correct path to the font files */
   }
 
-  #home{
-    font-family: "MonumentExtended";
-    font-weight:400;
+  #home,#ShowCase,#features,#download,#tutorial,#footer{
+    /* font-family: "MonumentExtended"; */
+    font-family: 'Barlow';
+    /* font-weight:400; */
   }
 
   #navbar #light{
@@ -61,7 +62,7 @@
   }
 
   #tutorial{
-    font-family: "MonumentExtended";
+    /* font-family: "MonumentExtended"; */
   }
 
   #pricing{
@@ -72,5 +73,14 @@
   }
 
   #footer{
-    font-family: "MonumentExtended";
+    /* font-family: "MonumentExtended"; */
+  }
+
+  #navbarItems{
+    width:50%;
+  }
+
+  #front{
+    transition: transform 0.8s;
+  transform-style: preserve-3d;
   }

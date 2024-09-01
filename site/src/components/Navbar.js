@@ -30,24 +30,24 @@ const Navbar=()=>{
                         <Logo  bottom='10px'/>
                     </Box>
                 
-                <Flex w='55%' justifyContent='space-between' alignItems='center'
+                <Flex  justifyContent='space-between' alignItems='center'
                 id='navbarItems'>
-                    <Link href='#home' fontSize='14px'
-                    color='white' fontWeight='400' textDecoration='none'>Home
+                    <Link href='#home' fontSize='16px'
+                    color='white' fontWeight='500' textDecoration='none'>Home
 
                     </Link>
-                    <Link color='white' href='#explore'  fontSize='14px'
-                    fontWeight='400' textDecoration='none'>
+                    <Link color='white' href='#ShowCase'  fontSize='16px'
+                    fontWeight='500' textDecoration='none'>
                     Explore
                     </Link>
                     {/* <Link color='white' href='#about' fontWeight='400' textDecoration='none'>
                     About
                     </Link> */}
-                    <Link color='white' href='#accounts'  fontSize='14px'
-                    fontWeight='400' textDecoration='none'>
+                    <Link color='white' href='#accounts'  fontSize='16px'
+                    fontWeight='500' textDecoration='none'>
                     My Account
                     </Link>
-                    <Link color='white'fontWeight='400'  fontSize='14px'
+                    <Link color='white'fontWeight='500'  fontSize='16px'
                     textDecoration='none'
                     href='#contact'>
                     Contact
