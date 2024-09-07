@@ -12,7 +12,7 @@ import {Box,
 
     const SingleFeature=({mainText,expl})=>{
         return (
-            <Box w='45%' p='10px' px='20px' mb='50px' minWidth='300px'>
+            <Box w='45%' p='10px' px='20px' mb='50px' minWidth='250px'>
                 <Text m='0px' mb='10px' fontSize='25px' fontWeight={500}>{mainText}</Text>
                 <Box w='50px' h='2px' backgroundColor='black'></Box>
                 <Text m='0px' mt='20px' fontSize='20px' fontWeight={400}>
@@ -25,7 +25,7 @@ import {Box,
     const Features=()=>{
         return(
         <Flex justifyContent='center' id='features' mb='100px' >
-            <Flex w='80%' flexWrap='wrap'>
+            <Flex w='80%' flexWrap='wrap' justifyContent='center'>
             <SingleFeature mainText='Filter Explicit Media'
                     expl=" Automatically detect and filters out any media content deemed explicit or inappropriate according to your personal or religious standards. Whether you're browsing social media, news websites, or any other online platform, the extension works in real-time to analyze images and videos, blurring or blocking content that doesn't align with your values"                    />
 

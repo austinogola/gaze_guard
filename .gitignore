@@ -10,6 +10,7 @@
 
 # production
 /build
+/venv
 
 *.zip
 
@@ -23,3 +24,51 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Local Netlify folder
+.netlify
+
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media
+
+# Virtual Environment
+.env
+venv/
+env/
+
+# PyCharm
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Compiled output
+dist/
+tmp/
+out-tsc/
+bazel-out/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Angular
+.angular/
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db

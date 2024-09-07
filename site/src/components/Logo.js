@@ -7,15 +7,15 @@ import logoBackground from './Images/logo.png'
 import logoForeGround from './Images/GazeGuard-White.png'
 
 
-export default function Logo(props) {
+export default function Logo({bottom}) {
   return (
-    <Box position='relative'  w='130px'>
+    <Box position='relative'  w='4rem' bottom={bottom}>
       <Link href='/'>
-        <Box position='absolute' top='0px' left='25%' >
-          <Image src={logoBackground} width={65}/>
+        <Box position='absolute' top='0px' left='1.2rem' >
+          <Image src={logoBackground} width='3.2rem'/>
         </Box>
-        <Box position='absolute' top='18px'>
-          <Image src={logoForeGround} width={130}/>
+        <Box position='absolute' top='5px'>
+          <Image src={logoForeGround} width='6rem'/>
         </Box>
 
       </Link>

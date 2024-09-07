@@ -1,82 +1,37 @@
-import {Box,
-    Flex,
-    Image,
-    Text,
-    HStack,
-    Link,
-    IconButton,
-    Button,
-    useDisclosure,
-    useColorModeValue,
-    Stack,} from '@chakra-ui/react'
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import Logo from './Logo';
-import logoImage from './Images/logo.png'
-
-import '../App.css'
+// src/Navbar.js
+import React, { useState } from 'react';
+import './styles/Navbar.css'
+import Logo from './Logo'
 
 
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const Links = ['Home', 'Explore', 'Contact', 'Pricing'];
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
-const Navbar=()=>{
-    const { isOpen, onOpen, onClose } = useDisclosure();
-    return(
-        <Box  w='100vw' top={0} left={0} zIndex={4} m={0}>
-            <Flex justifyContent='space-between' 
-            padding='0px' margin='0px'
-            pl={80} pr={80}  color='white'  id='navbar'>
-                    <Box alignItems='center' positon='relative' bottom='15px'>
-                        <Logo  bottom='10px'/>
-                    </Box>
-                
-                <Flex  justifyContent='space-between' alignItems='center'
-                id='navbarItems'>
-                    <Link href='#home' fontSize='16px'
-                    color='white' fontWeight='500' textDecoration='none'>Home
+  return (
+    <nav className="navbar">
+      <div className="logo">
+        <Logo bottom='20px'/>
+      </div>
+      <div className={`menu-toggle ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+      <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
+        <li><a href="#home">Home</a></li>
+        <li><a href='#ShowCase'>Explore</a></li>
+        <li><a href="#accounts">My Account</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#install">
+            <button id='installBtn'>Install</button>
+        </a></li>
+      </ul>
+    </nav>
+  );
+};
 
-                    </Link>
-                    <Link color='white' href='#ShowCase'  fontSize='16px'
-                    fontWeight='500' textDecoration='none'>
-                    Explore
-                    </Link>
-                    {/* <Link color='white' href='#about' fontWeight='400' textDecoration='none'>
-                    About
-                    </Link> */}
-                    <Link color='white' href='#accounts'  fontSize='16px'
-                    fontWeight='500' textDecoration='none'>
-                    My Account
-                    </Link>
-                    <Link color='white'fontWeight='500'  fontSize='16px'
-                    textDecoration='none'
-                    href='#contact'>
-                    Contact
-                    </Link>
-                    {/* <Link href='#pricing'
-                      textDecoration='none' fontWeight='500'>
-                        <Button border='none' outline='none' borderRadius='6px'
-                        fontWeight='500' p='10px' px='20px' 
-                        boxShadow='0 4px 8px rgba(44, 117, 255, 0.3), 0 6px 20px rgba(44, 117, 255, 0.2)'
-                         height='30px' color='white' backgroundColor='#2c75ff'>
-                         <Text m='0px' fontWeight={800} fontSize='16px'>Pricing</Text>
-                            
-                        </Button>
-                    </Link> */}
-                    <Link href='#install'
-                      textDecoration='none' fontWeight='500'>
-                        <Button border='none' outline='none' borderRadius='6px'
-                        fontWeight='500' p='10px' px='25px' py='20px'
-                        boxShadow='0 4px 8px rgba(44, 117, 255, 0.3), 0 6px 20px rgba(44, 117, 255, 0.2)'
-                         height='30px' color='white' backgroundColor='#2c75ff'>
-                         <Text m='0px' fontWeight={800} fontSize='16px'>Install</Text>
-                            
-                        </Button>
-                    </Link>
-                </Flex>
-                
-            </Flex>
-        </Box>
-    )
-}
-
-export default Navbar
+export default Navbar;

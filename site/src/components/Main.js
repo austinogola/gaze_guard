@@ -28,36 +28,37 @@ const Main=()=>{
         width='100vw' w='100vw' mb='100px'
         height='700px' position='relative' id='home'
         backgroundSize='cover' backgroundPosition='center' backgroundRepeat='no-repeat'>
-         <Box pt='20px'>
+         <Box>
             <Navbar/>
          </Box>
 
-         <Box zIndex={2} color='white' textAlign='center' pt='40px' lineHeight='100px'>
-            <Text fontSize='6rem' fontWeight={900} margin='0px' padding='0px' id='bold'>
+         <Box zIndex={2} color='white' textAlign='center' pt='40px'
+            id='main_text_parent' px='10px'>
+            <Text fontWeight={900} margin='0px' padding='0px' id='bold'>
             SHIELD YOUR </Text>
-            <Text fontSize='6rem' fontWeight={900} color='#2C75FF' margin='0px' id='bold'>
-            GAZE  <Text as='span' fontSize='6rem' fontWeight={900}
+            <Text fontWeight={900} color='#2C75FF' margin='0px' id='bold'>
+            GAZE  <Text as='span' fontWeight={900}
              margin='0px' padding='0px' id='bold' color='white'>
             FROM</Text>
             </Text>
-            <Text fontSize='6rem' fontWeight={900} color='#2C75FF' margin='0px' id='bold'>
+            <Text fontWeight={900} color='#2C75FF' margin='0px' id='bold'>
             HARMFUL
             </Text>
-            <Text fontSize='6rem' fontWeight={900} margin='0px' padding='0px' id='bold'>
+            <Text fontWeight={900} margin='0px' padding='0px' id='bold'>
             CONTENT. </Text>
          </Box>
          <Flex justifyContent='center' alignItems='center' mt='10px' >
-            <Text textAlign='center' fontSize='20px'margin='0px' w='50%' color='white' fontWeight={500}>
+            <Text textAlign='center' fontSize='1.2rem'margin='0px' w='80%' color='white' fontWeight={500}>
             Use Our AI trained smart filter to protect you from unwanted content, so you can surf safely.
             </Text>
          </Flex>
 
-         <Flex justifyContent='center' alignItems='center' position='relative' top='80px'>
+         {/* <Flex justifyContent='center' alignItems='center' position='relative' top='80px'>
             <Link href='#features'>
                <Image src={arrowsImage} w='70px' cursor='pointer'/>
             </Link>
             
-         </Flex>
+         </Flex> */}
          
         </Box>
     )

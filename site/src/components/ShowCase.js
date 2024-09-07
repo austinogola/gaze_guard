@@ -44,11 +44,10 @@ import {Box,
         return(
             <Box  padding='0px' justifyContent='center' id='ShowCase' mb='100px' >
                 <Flex w='100%' alignItems='center' justifyContent='center'>
-                    <Box w='50%' textAlign='center'>
-                        <Text fontSize='5rem' fontWeight='600' >
+                    <Box w='80%' textAlign='center'>
+                        <Text fontSize='5rem' fontWeight='600' textAlign='center' >
                         <Text as='span' color='#2c75ff'>DETECT</Text> AND BLUR
-                        <Text as='span' color='#2c75ff'> NSFW </Text>
-                          CONTENT</Text>
+                        <Text as='span' color='#2c75ff'> NSFW </Text>CONTENT</Text>
                     </Box> 
                 </Flex>
                 <Flex w='100%' justifyContent='center'  px='10px'>

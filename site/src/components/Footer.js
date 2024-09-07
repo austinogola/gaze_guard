@@ -22,6 +22,8 @@ import fbImg from './Images/fb.png'
 import tgImg from './Images/telegram.png'
 import igImg from './Images/ig.png'
 
+import './styles/Footer.css'
+
 const Footer=()=>{
     return(
         <Box id='footer'>
@@ -31,7 +33,7 @@ const Footer=()=>{
             <Flex justifyContent='center'>
                 <FormControl>
                     <Input type='email' border='none' placeholder='Your Email' px='10px'
-                    outline='none' h='48px' width='350px' backgroundColor='#f1f1f1'
+                    outline='none' h='48px' width='300px' maxWidth='300px' backgroundColor='#f1f1f1'
                         borderRadius='10px'
                     />
 
@@ -44,11 +46,13 @@ const Footer=()=>{
                 
             </Flex>
             <Flex justifyContent='center' alignItems='center' mt='80px'>
-                <Flex justifyContent='space-between' w='80%'>
-                    <Flex w='20%' alignItems='center'>
+                <Flex w='80%' flexWrap='wrap'
+                id='footerHolder'>
+                    <Flex alignItems='center' id='footerLogo'>
                         <Image src={logoImage} width={40}/>
                     </Flex>
-                    <Flex w='60%' justifyContent='space-around' alignItems='center'>
+                    <Flex  justifyContent='space-around' alignItems='center'
+                    id='footerLinks'>
                         <Link href='#' textDecoration='none' >
                             Home
                         </Link>
@@ -63,7 +67,8 @@ const Footer=()=>{
                         </Link>
                        
                     </Flex>
-                    <Flex w='20%' justifyContent='space-around' alignItems='center'>
+                    <Flex alignItems='center'
+                    id='footerSocial'>
                         <Link href='#'>
                             <Image src={fbImg} w='25px'/>
                         </Link>
@@ -83,7 +88,7 @@ const Footer=()=>{
 
             </Flex>
 
-            <Flex justifyContent='center' alignItems='center' mb='20px'>
+            <Flex justifyContent='center' alignItems='center' mb='20px' mt='10px'>
                 <Text m={0} fontSize='8px'>CopyRight &#169;, GazeGuard, 2024</Text>
             </Flex>
             
