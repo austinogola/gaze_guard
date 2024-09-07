@@ -36,7 +36,7 @@ function Signup() {
     if (validateForm()) {
       try {
         
-        const response = await axios.post(`${SERVER_HOST}/signup/'`, formData);
+        const response = await axios.post(`${SERVER_HOST}/signup/`, formData);
 
         if (response.data.status === 'success') {
           const gg_token=response.data.token
