@@ -15,6 +15,7 @@ function Login() {
 
   const [loading, setLoading] = useState(false);
 
+  const SERVER_HOST= process.env.REACT_APP_SERVER_HOST;
 
   const validateForm = () => {
     const newErrors = {};
@@ -31,7 +32,7 @@ function Login() {
     setApiError('')
     if (validateForm()) {
       try {
-        const response = await axios.post('http://localhost:8000/login/', formData);
+        const response = await axios.post(`${SERVER_HOST}/login/'`, formData);
         
         if (response.data.status === 'success') {
           const gg_token=response.data.token

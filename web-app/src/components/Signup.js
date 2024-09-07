@@ -15,6 +15,9 @@ function Signup() {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
+  const SERVER_HOST= process.env.REACT_APP_SERVER_HOST;
+
+
   const validateForm = () => {
     const newErrors = {};
     if (!formData.username) newErrors.username = 'Username is required';
@@ -31,7 +34,9 @@ function Signup() {
     setLoading(true);
     if (validateForm()) {
       try {
-        const response = await axios.post('http://localhost:8000/signup/', formData);
+        
+        const response = await axios.post(`${SERVER_HOST}/signup/'`, formData);
+
         if (response.data.status === 'success') {
           const gg_token=response.data.token
           const date = new Date();
