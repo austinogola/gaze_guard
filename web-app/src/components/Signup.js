@@ -15,7 +15,8 @@ function Signup() {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const SERVER_HOST= process.env.REACT_APP_SERVER_HOST;
+  // const SERVER_HOST= process.env.REACT_APP_SERVER_HOST;
+  const SERVER_HOST='http://213.148.17.135:8000'
 
 
   const validateForm = () => {
