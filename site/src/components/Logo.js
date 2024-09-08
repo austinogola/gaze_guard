@@ -14,13 +14,8 @@ export default function Logo({bottom}) {
         <Box position='absolute' top='0px' left='1.2rem' >
           <Image src={logoBackground} width='3.2rem'/>
         </Box>
-        <Box position='absolute' top='5px'>
-          <Image src={logoForeGround} width='6rem'/>
-        </Box>
 
-      </Link>
-      
-                    
+      </Link>            
      
     </Box>
   )

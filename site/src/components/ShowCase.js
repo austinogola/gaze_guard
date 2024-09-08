@@ -45,12 +45,12 @@ import {Box,
             <Box  padding='0px' justifyContent='center' id='ShowCase' mb='100px' >
                 <Flex w='100%' alignItems='center' justifyContent='center'>
                     <Box w='80%' textAlign='center'>
-                        <Text fontSize='5rem' fontWeight='600' textAlign='center' >
-                        <Text as='span' color='#2c75ff'>DETECT</Text> AND BLUR
-                        <Text as='span' color='#2c75ff'> NSFW </Text>CONTENT</Text>
+                        <Text fontSize='3rem' fontWeight='600' textAlign='center' >
+                            DETECT AND BLUR NSFW CONTENT
+                        </Text>
                     </Box> 
                 </Flex>
-                <Flex w='100%' justifyContent='center'  px='10px'>
+                {/* <Flex w='100%' justifyContent='center'  px='10px'>
                         <Flex flexWrap='wrap' justifyContent='center' w='80%' id='imageGrid'>
                             <Box w='30%' h='410px' overflow='hidden'
                                 minW='300px' border='2px solid white' padding=''
@@ -92,7 +92,7 @@ import {Box,
                    
                     
                         
-                </Flex>
+                </Flex> */}
                     
             </Box>
         )
