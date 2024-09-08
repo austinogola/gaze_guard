@@ -16,7 +16,9 @@ function Signup() {
   const [showPassword, setShowPassword] = useState(false);
 
   // const SERVER_HOST= process.env.REACT_APP_SERVER_HOST;
-  const SERVER_HOST='http://213.148.17.135:8000'
+  // const SERVER_HOST='http://213.148.17.135:8000'
+  const SERVER_HOST='https://gazeguard-server-5be665b21a9f.herokuapp.com'
+  // const SERVER_HOST='http://127.0.0.1:8000'
 
 
   const validateForm = () => {

@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--jhbkhyqv0xd(3k+sm8$l@66r^ig@)i_5$pke!y4@925ss8ba0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','https://gazeguard-server-e1aee3234e0d.herokuapp.com']
 CORS_ORIGIN_ALLOW_ALL = True
 
 
