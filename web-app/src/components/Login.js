@@ -17,7 +17,9 @@ function Login() {
 
   // const SERVER_HOST= process.env.REACT_APP_SERVER_HOST;
   // const SERVER_HOST='http://213.148.17.135:8000'
-  const SERVER_HOST='https://gazeguard-server-5be665b21a9f.herokuapp.com'
+  // const SERVER_HOST='https://gazeguard-server-5be665b21a9f.herokuapp.com'
+  // const SERVER_HOST='http://localhost:5000'
+  const SERVER_HOST='https://server.gazegaurd.com'
 
   const validateForm = () => {
     const newErrors = {};
@@ -34,10 +36,11 @@ function Login() {
     setApiError('')
     if (validateForm()) {
       try {
-        const response = await axios.post(`${SERVER_HOST}/login/`, formData);
+        const response = await axios.post(`${SERVER_HOST}/auth/login/`, formData);
+        console.log(response.data);
         
         if (response.data.status === 'success') {
-          const gg_token=response.data.token
+          const gg_token=response.data.gg_token
           const date = new Date();
           date.setTime(date.getTime() + (21 * 24 * 60 * 60 * 1000)); // 21 days from now
           setCookie('gg_token',gg_token,{path:'/',expires:date})

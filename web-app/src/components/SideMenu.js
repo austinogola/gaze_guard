@@ -18,9 +18,10 @@ function SideMenu({activeLink}) {
   const logout=(e)=>{
     console.log('deleting');
     removeCookie("gg_token")
-    let gg_token=cookies.gg_token
-    console.log(gg_token)
-    navigate('/')
+    window.location.reload();
+    // let gg_token=cookies.gg_token
+    // console.log(gg_token)
+    // navigate('/')
   }
   
 

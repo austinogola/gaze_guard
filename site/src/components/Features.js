@@ -12,10 +12,10 @@ import {Box,
 
     const SingleFeature=({mainText,expl})=>{
         return (
-            <Box w='45%' p='10px' px='20px' mb='50px' minWidth='250px'>
-                <Text m='0px' mb='10px' fontSize='25px' fontWeight={500}>{mainText}</Text>
-                <Box w='50px' h='2px' backgroundColor='black'></Box>
-                <Text m='0px' mt='20px' fontSize='20px' fontWeight={400}>
+            <Box w='45%' p='10px' px='20px' mb='50px' minWidth='200px'>
+                <Text m='0px' mb='10px' fontSize='18px' fontWeight={500}>{mainText}</Text>
+                {/* <Box w='50px' h='2px' backgroundColor='black'></Box> */}
+                <Text m='0px' mt='20px' fontSize='16px' fontWeight={400}>
                     {expl}
                 </Text>
             </Box>

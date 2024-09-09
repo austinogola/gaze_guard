@@ -31,7 +31,7 @@ function Home() {
       {/* <OurSpecialty/> */}
       {/* <HowWorks/> */}
       <Tutorial/>
-      {/* <Pricing/> */}
+      <Pricing/>
       <Footer/>
       {/* 
        */}
