@@ -1,0 +1,55 @@
+.how-it-works-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .steps-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .step-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .step-card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Adjust layout on smaller screens */
+  @media (max-width: 768px) {
+    .how-it-works-section {
+      flex-direction: column-reverse;
+    }
+  
+    .steps-container {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .image-container {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  

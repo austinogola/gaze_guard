@@ -1,0 +1,34 @@
+.landing-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .left-side,
+  .right-side {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid red;
+  }
+  
+  .left-side {
+    background-color: #f0f0f0; /* Optional styling */
+  }
+  
+  .right-side {
+    background-color: #e0e0e0; /* Optional styling */
+  }
+
+  .image-holder{
+    position: relative;
+  }
+  
+  /* Stacking the sides on mobile screens */
+  @media (max-width: 768px) {
+    .landing-section {
+      flex-direction: column-reverse;
+    }
+  }
+  

@@ -2,6 +2,7 @@
 import {Box} from '@chakra-ui/react'
 import Navbar from './Navbar';
 import Main from './Main';
+import AboutSection from './AboutSection';
 import AboutUs from './AboutUs';
 import OurSpecialty from './OurSpecialty';
 import HowWorks from './HowWorks';
@@ -12,6 +13,7 @@ import mainImage from './Images/main.png'
 import ShowCase from './ShowCase';
 import Features from './Features'
 import Download from './Download';
+import HowItWorks from './HowItWorks';
 
 
 function Home() {
@@ -19,9 +21,12 @@ function Home() {
     <Box className="App" padding='0px'  overflow='hidden' margin='0px'>
       {/* <Navbar/> */}
       <Main/>
-      <ShowCase/>
+      <AboutSection/>
       <Features/>
-      <Download/>
+      <HowItWorks/>
+      {/* <ShowCase/>
+      
+      <Download/> */}
       {/* <AboutUs/> */}
       {/* <OurSpecialty/> */}
       {/* <HowWorks/> */}
