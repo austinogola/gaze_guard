@@ -3,10 +3,10 @@ import Navbar from "./Navbar";
 import Main from "./Main";
 import AboutSection from "./AboutSection";
 import AboutUs from "./AboutUs";
-import OurSpecialty from "./OurSpecialty";
+import OurSpecialty from "./newOurSpecialty";
 import HowWorks from "./HowWorks";
 import Tutorial from "./Tutorial";
-import Pricing from "./Pricing";
+import Pricing from "./newPricing";
 import Footer from "./Footer";
 import mainImage from "./Images/main.png";
 import ShowCase from "./ShowCase";
@@ -21,6 +21,7 @@ function Home() {
       <Main />
       <AboutSection />
       <Features />
+      <OurSpecialty />
       <HowItWorks />
       {/* <ShowCase/>
       
@@ -29,6 +30,7 @@ function Home() {
       {/* <OurSpecialty/> */}
       {/* <HowWorks/> */}
       <Tutorial />
+      <Pricing />
       {/* <Pricing/> */}
       <Footer />
       {/*

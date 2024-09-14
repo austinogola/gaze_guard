@@ -1,0 +1,17 @@
+.ourSpecialtyStepsContainer {
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+.OurSpecialtyParentDiv {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+  margin-bottom: 5%;
+}

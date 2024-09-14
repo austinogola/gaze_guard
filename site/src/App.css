@@ -25,6 +25,14 @@
   /* font-weight:400; */
 }
 
+h1,
+h2,
+h3,
+h4,
+p {
+  font-family: "MonumentExtendedLight", Arial, sans-serif;
+}
+
 #main_text_parent p,
 #main_text_parent span {
   font-size: 6rem;

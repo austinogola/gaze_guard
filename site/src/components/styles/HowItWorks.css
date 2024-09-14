@@ -80,7 +80,8 @@
 @media screen and (min-width: 1024px) {
   .how-it-works-section {
     display: flex;
-    padding: 4rem 0rem 4rem 10rem;
+    gap: 1rem;
+    padding: 4rem 0rem 4rem 8rem;
     flex-wrap: wrap;
     position: relative;
   }
@@ -94,14 +95,14 @@
   }
 
   .image-container {
-    display: flex;
-    width: fit-content;
+    /* display: flex; */
+    width: 50%;
     justify-content: end;
     align-items: center;
   }
 
   .image-container img {
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
   }
@@ -159,6 +160,7 @@
   .how-it-works-section {
     display: flex;
     padding: 2rem 2rem 2rem 2rem;
+    gap: 1rem;
     flex-wrap: wrap;
     position: relative;
   }
@@ -166,19 +168,20 @@
   .steps-container {
     flex: 1;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    gap: 2.5rem;
+    gap: 2rem;
     margin-bottom: 2rem;
   }
 
   .image-container {
-    display: flex;
-    width: fit-content;
+    /* display: flex; */
+    width: 50%;
     justify-content: end;
   }
 
-  .image-container img {
-    max-width: 80%;
+  .image-container > img {
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
   }
@@ -228,7 +231,7 @@
 
   .bigLogoImage {
     position: absolute;
-    top: 20%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
