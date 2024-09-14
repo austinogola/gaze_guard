@@ -29,7 +29,7 @@ function Pricing() {
           <div className="recommendedDiv">
             <p>RECOMMENDED</p>
           </div>
-          <div className="h1TextDiv">
+          <div>
             <h1>Free Plan</h1>
           </div>
           <div className="imageDivsParent">
