@@ -175,7 +175,6 @@
   }
 
   .image-container {
-    /* display: flex; */
     width: 50%;
     justify-content: end;
   }
