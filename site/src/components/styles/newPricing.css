@@ -1,3 +1,10 @@
+
+a{
+  text-decoration: none;
+}
+.recommendedDivText p{
+  font-size: 1rem !important;
+}
 @media (max-width: 767px) {
   .PricingParentContainer {
     margin: 5%;
@@ -13,7 +20,7 @@
 
   .pricingPlans h1 {
     margin: 0;
-    font-size: clamp(2rem, 3.4vw, 100rem);
+    font-size: clamp(1.2rem, 2vw, 80rem);
   }
 
   .freePlan {
@@ -61,12 +68,12 @@
   .recommendedDiv p {
     margin: 0;
     color: #2c75ff;
-    font-weight: 600;
-    font-size: clamp(1rem, 1.4vw, 100rem);
+    font-weight: 500;
+    font-size: clamp(0.6rem, 1vw, 80rem);
   }
 
   .bolderText {
-    font-weight: 700;
+    font-weight: 500;
   }
 
   .premiumPlan h1 {
@@ -89,7 +96,7 @@
   }
 
   .imageDivsParent p {
-    font-size: clamp(1rem, 1.75vw, 100rem);
+    font-size: clamp(0.8rem, 1.6vw, 90rem);
   }
 
   .plansImagesDiv {
@@ -127,8 +134,8 @@
   .buttonDivPricingContainer button {
     all: unset;
     padding: 0.5rem 1rem 0.5rem 1rem;
-    font-weight: 600;
-    font-size: clamp(1rem, 1.75vw, 100rem);
+    font-weight: 500;
+    font-size: clamp(0.8rem, 1.2vw, 90rem);
     border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 1rem 0.5px #2c76ffab;
   }
@@ -157,7 +164,7 @@
 
   .pricingPlans h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 
   .freePlan {
@@ -196,12 +203,12 @@
   .recommendedDiv p {
     margin: 0;
     color: #2c75ff;
-    font-weight: 600;
-    font-size: 0.85rem;
+    font-weight: 500;
+    font-size: 0.7rem;
   }
 
   .bolderText {
-    font-weight: 700;
+    font-weight: 500;
   }
 
   .premiumPlan h1 {
@@ -224,7 +231,7 @@
   }
 
   .imageDivsParent p {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .plansImagesDiv {
@@ -258,8 +265,8 @@
   .buttonDivPricingContainer button {
     all: unset;
     padding: 0.5rem 1rem 0.5rem 1rem;
-    font-weight: 600;
-    font-size: large;
+    font-weight: 500;
+    font-size: 0.8rem;
     border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 1rem 0.5px #2c76ffab;
   }
@@ -284,7 +291,7 @@
 
   .pricingPlans h1 {
     margin: 0;
-    font-size: clamp(2rem, 3.4vw, 100rem);
+    font-size: clamp(1rem, 2vw, 80rem);
   }
 
   .freePlan {
@@ -334,12 +341,12 @@
   .recommendedDiv p {
     margin: 0;
     color: #2c75ff;
-    font-weight: 600;
-    font-size: 1.4vw;
+    font-weight: 500;
+    font-size: 1vw;
   }
 
   .bolderText {
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .premiumPlan h1 {
@@ -362,7 +369,7 @@
   }
 
   .imageDivsParent p {
-    font-size: clamp(0.85rem, 1.75vw, 100rem);
+    font-size: clamp(0.75rem, 1.2vw, 80rem);
   }
 
   .plansImagesDiv {
@@ -401,7 +408,7 @@
     all: unset;
     padding: 0.5rem 1rem 0.5rem 1rem;
     font-weight: 600;
-    font-size: 1.75vw;
+    font-size: 1.2vw;
     border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 1rem 0.5px #2c76ffab;
   }

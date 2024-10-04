@@ -20,7 +20,7 @@ function SideMenu({activeLink}) {
     removeCookie("gg_token")
     let gg_token=cookies.gg_token
     console.log(gg_token)
-    navigate('/')
+    navigate('/login')
   }
   
 

@@ -24,7 +24,7 @@ import imageImgWhite from './Images/icons8-image-50-white.png'
 
 const Pricing=()=>{
     return(
-        <Box mb='150px' padding='0px' 
+        <Box mb='150px' padding='0px' className='title'
         backgroundColor='white' position='relative' id='pricing'>
 
             <Flex justifyContent='center' alignItems='center'>

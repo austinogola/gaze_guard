@@ -22,17 +22,17 @@ const Feature=({text,explanation,num})=>{
                 </Flex>
                 
             </Flex>
-            <Flex justifyContent='center' alignItems='center'>
+            <Flex justifyContent='center' alignItems='center' className='title'>
                 <Text margin={0} mt='8px' fontWeight={500} 
                 fontSize='15px'
                 textAlign='center'>{text}</Text>
             </Flex>
-            <Flex justifyContent='center' alignItems='center'>
+            <Flex justifyContent='center' alignItems='center' className='reg'>
                 <Text margin={0} mt='8px' fontWeight={400} 
                 fontSize='13px'
                 textAlign='center'>{explanation}</Text>
             </Flex>
-            <Flex justifyContent='center' alignItems='center'>
+            <Flex justifyContent='center' alignItems='center' className='title'>
                 <Text margin={0} mt='8px' fontWeight={500} 
                 fontSize='30px'
                 textAlign='center'>{num}</Text>

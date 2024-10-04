@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import './styles/Navbar.css'
 import Logo from './Logo'
+import {Link} from 'react-router-dom'
+import { Link as ScrollLink, Button, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+
 
 
 const Navbar = () => {
@@ -22,13 +25,23 @@ const Navbar = () => {
         <div className="bar"></div>
       </div>
       <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
-        <li><a href="#home">Home</a></li>
-        <li><a href='#ShowCase'>Explore</a></li>
-        <li><a href="#accounts">My Account</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#install">
+        <li><Link to="/">Home</Link></li>
+        <li style={{cursor:'pointer'}}>
+        <ScrollLink  to="specialty" spy={true} smooth={true}>
+        Explore
+        </ScrollLink>
+        </li>
+        {/* <li><a href='#specialty'></a></li> */}
+        <li><Link to="https://app.gazeguard.io" target='_blank'>My Account</Link></li>
+        <li style={{cursor:'pointer'}}>
+        <ScrollLink  to="about" spy={true} smooth={true}>
+        About
+        </ScrollLink>
+        </li>
+        <li><Link to="/contact">Contact</Link></li>
+        <li><Link href="#install">
             <button id='installBtn'>Install</button>
-        </a></li>
+        </Link></li>
       </ul>
     </nav>
   );

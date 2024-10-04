@@ -8,15 +8,15 @@ const HowItWorks = () => {
   return (
     <div>
       <div className="howItWorksTopDiv">
-        <div className="howItWorksFloatingTitle">
-          <h2>How It Works</h2>
+        <div className="howItWorksFloatingTitle title">
+          <h4>How It Works</h4>
         </div>
         <div>
-          <h2>
+          <h4 className="title" style={{fontSize:'2rem'}}>
             Complete Solution for <br /> your{" "}
-            <span className="extensionSpan">Extension</span>{" "}
-          </h2>
-          <p>
+            <span style={{fontSize:'2rem'}} className="extensionSpan">Extension</span>{" "}
+          </h4>
+          <p className="reg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             porta ante non ante dignissim aliquam. Pellentesque nunc leo,
             pretium a lorem vel, ornare mollis leo.

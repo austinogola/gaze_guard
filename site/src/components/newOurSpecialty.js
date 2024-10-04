@@ -4,17 +4,17 @@ import "./styles/newOurSpecialty.css";
 
 function OurSpecialty() {
   return (
-    <div className="OurSpecialtyParentDiv">
+    <div className="OurSpecialtyParentDiv" id='specialty'>
       <div className="howItWorksTopDiv">
-        <div className="howItWorksFloatingTitle">
-          <h2>Our Specialty</h2>
+        <div className="howItWorksFloatingTitle title">
+          <h4>Our Specialty</h4>
         </div>
         <div>
-          <h2>
+          <h4 className="title extensionTitle">
             Complete Solution for <br /> your{" "}
-            <span className="extensionSpan">Extension</span>{" "}
-          </h2>
-          <p>
+            <span className="extensionSpann">Extension</span>{" "}
+          </h4>
+          <p className="reg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             porta ante non ante dignissim aliquam. Pellentesque nunc leo,
             pretium a lorem vel, ornare mollis leo.
@@ -29,7 +29,7 @@ velit at dui interdum"
           number="01"
         />
         <OurSpecialtySteps
-          title="High Quality"
+          title="High Top Quality"
           paragraph="Nulla facilisi. Donec laoreet
 velit at dui interdum"
           number="02"

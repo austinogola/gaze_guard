@@ -14,6 +14,80 @@
   /* Specify the correct path to the font files */
 }
 
+@font-face {
+  font-family: "BankGothicRegular";
+  src: url("./fonts/Bank Gothic Light Regular.otf") format("opentype");
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+@font-face {
+  font-family: "BankGothicMedium";
+  src: url("./fonts/bank gothic medium bt.ttf") format("opentype");
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+@font-face {
+  font-family: "BankGothicBold";
+  src: url("./fonts/BankGothic Bold.ttf") format("opentype");
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+@font-face {
+  font-family: "Eurostyle";
+  src: url("./fonts/EuroStyle Normal.ttf") format("opentype");
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+@font-face {
+  font-family: "EurostileExtended";
+  src: url("./fonts/EurostileExtendedBlack.ttf") format("opentype");
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+
+@font-face {
+  font-family: "Eurostyle";
+  src: url("./fonts/EuroStyle Normal.ttf") format("opentype");
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+@font-face {
+  font-family: "EurostileExtended";
+  src: url("./fonts/EurostileExtendedBlack.ttf") format("opentype");
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+
+
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/montserrat/Montserrat-Medium.ttf") format("opentype");
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+@font-face {
+  font-family: "MontserratBold";
+  src: url("./fonts/montserrat/Montserrat-Bold.ttf") format("opentype");
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+
+*.title{
+  font-family: 'MonumentExtended';
+}
+
+*.reg{
+  font-family: 'Montserrat';
+}
+*.title-bold{
+  font-family: 'MonumentExtendedBold';
+}
+
+/* *#bold{
+  font-family: 'MonumentExtendedBold';
+} */
+
 #home,
 #ShowCase,
 #features,
@@ -21,7 +95,7 @@
 #tutorial,
 #footer {
   /* font-family: "MonumentExtended"; */
-  font-family: "Barlow";
+  /* font-family: "Barlow"; */
   /* font-weight:400; */
 }
 
@@ -30,12 +104,14 @@ h2,
 h3,
 h4,
 p {
-  font-family: "MonumentExtendedLight", Arial, sans-serif;
+  /* font-family: "MonumentExtendedLight", Arial, sans-serif; */
 }
 
 #main_text_parent p,
 #main_text_parent span {
-  font-size: 6rem;
+  font-size: 7rem;
+  font-family: 'MonumentExtendedBold';
+  margin: 0px;
 }
 
 #navbar #light {
@@ -59,23 +135,23 @@ a[href] button:hover {
 }
 
 #home #bold {
-  font-family: "MonumentExtendedBold";
+  /* font-family: "MonumentExtendedBold"; */
   font-weight: 1000;
 }
 
 #about {
-  font-family: "MonumentExtended";
+  /* font-family: "MonumentExtended"; */
 }
 #about button {
-  font-family: "MonumentExtended";
+  /* font-family: "MonumentExtended"; */
 }
 
 #explore {
-  font-family: "MonumentExtended";
+  /* font-family: "MonumentExtended"; */
 }
 
 #howWorks {
-  font-family: "MonumentExtended";
+  /* font-family: "MonumentExtended"; */
 }
 
 #tutorial {
@@ -83,10 +159,10 @@ a[href] button:hover {
 }
 
 #pricing {
-  font-family: "MonumentExtended";
+  /* font-family: "MonumentExtended"; */
 }
 #pricing button {
-  font-family: "MonumentExtended";
+  /* font-family: "MonumentExtended"; */
 }
 
 #footer {
@@ -139,6 +215,15 @@ a[href] button:hover {
 @media only screen and (max-width: 460px) {
   #main_text_parent p,
   #main_text_parent span {
-    font-size: 3.5rem;
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 350px) {
+  #main_text_parent{
+    line-height: 200px;
+  }
+  #main_text_parent p,
+  #main_text_parent span {
+    font-size: 2.8rem;
   }
 }

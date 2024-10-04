@@ -7,12 +7,12 @@ import plansVideoWhite from "./Images/icons8-video-50-white.png";
 
 function Pricing() {
   return (
-    <div className="PricingParentContainer">
+    <div className="PricingParentContainer title">
       <div className="howItWorksTopDiv">
-        <div className="howItWorksFloatingTitle">
-          <h2>Tutorial</h2>
+        <div className="howItWorksFloatingTitle title">
+          <h2>Pricing</h2>
         </div>
-        <div>
+        {/* <div>
           <h2>
             Our Expert Tells Via <br />
             <span className="extensionSpan">Tutorial</span>{" "}
@@ -22,7 +22,7 @@ function Pricing() {
             porta ante non ante dignissim aliquam. Pellentesque nunc leo,
             pretium a lorem vel, ornare mollis leo.
           </p>
-        </div>
+        </div> */}
       </div>
       <div className="plansParentDiv">
         <div className="pricingPlans freePlan">
@@ -53,7 +53,11 @@ function Pricing() {
             </div>
           </div>
           <div className="buttonDivPricingContainer">
-            <button>CHOOSE PLAN</button>
+            <a href='https://app.gazeguard.io/plans' 
+            target="_blank" rel="noreferrer">
+              <button>CHOOSE PLAN</button>
+            </a>
+            
           </div>
         </div>
         <div className="pricingPlans premiumPlan">
@@ -90,7 +94,10 @@ function Pricing() {
             </div>
           </div>
           <div className="buttonDivPricingContainer">
-            <button>CHOOSE PLAN</button>
+           <a href='https://app.gazeguard.io/plans' target="_blank" rel="noreferrer">
+              <button>CHOOSE PLAN</button>
+           </a>
+            
           </div>
         </div>
         <div className="pricingPlans deluxePlan">
@@ -122,7 +129,10 @@ function Pricing() {
             </div>
           </div>
           <div className="buttonDivPricingContainer">
-            <button>CHOOSE PLAN</button>
+            <a href='https://app.gazeguard.io/plan' target="_blank" rel="noreferrer">
+              <button>CHOOSE PLAN</button>
+            </a>
+            
           </div>
         </div>
       </div>

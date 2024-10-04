@@ -6,7 +6,8 @@ import darkImg from "./Images/extDark.png";
 
 const AboutSection = () => {
   return (
-    <div className="landing-section">
+    <div className="landing-section" id='about'>
+       
       <div className="left-side">
         <div className="image-holder">
           <div className="logoBiggerDiv">
@@ -21,30 +22,27 @@ const AboutSection = () => {
         </div>
       </div>
       <div className="right-side">
-        <div className="aboutSectionFloatingTitle">
-          <h2>About Us</h2>
-        </div>
+        {/* <div className="aboutSectionFloatingTitle">
+        <h2>About Us</h2>
+        </div> */}
         <div>
-          <h2>
-            High Quality <br /> Chrome{" "}
+          <h2 className='extensionText title' id='bold'>
+            High Quality Chrome
             <span className="extensionSpan"> Extension</span>
           </h2>
-          <div className="paragraphDiv">
+          <div className="paragraphDiv reg">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Vestibulum porta ante non ante dignissim aliquam. Pellentesque
-              nunc leo, pretium a lorem vel, ornare mollis leo.
+            Gaze Guard is a Google Chrome extension that helps users comply with the Islamic 
+            practice of lowering their gaze by blurring out images and videos of 
+            men and women on websites. 
             </p>
+
             <p>
-              Nulla facilisi. Donec laoreet velit at dui interdum, et rhoncus
-              leo vehicula. Nam rutrum diam eu pellentesque ornare. Maecenas
-              laoreet turpis pharetra imperdiet conseqdddduat. In finibus mauris
-              sed vestibulum sodales. Donec luctus, ipsum ut bibendum dictum,
-              turpis tortor molestie diam, consequat auctor sem nisi id eros
-            </p>
+        By automatically obscuring these visual elements , Gaze Guard allows users to browse the internet while maintaining adherence to their religious values. Easy to install and use, Gaze Guard ensures that your online activities remain respectful and aligned with your beliefs
+        </p>
           </div>
         </div>
-        <button className="learnMoreButton">Learn More</button>
+        {/* <button className="learnMoreButton">Learn More</button> */}
       </div>
     </div>
   );

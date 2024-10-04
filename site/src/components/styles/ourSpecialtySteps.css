@@ -22,13 +22,13 @@
   .ourSpecialtyStepsParentDiv h3 {
     margin: 0;
     color: rgb(75, 75, 75);
-    font-size: clamp(1.13rem, 1.85vw, 100rem);
+    font-size: clamp(1rem, 1.7vw, 190rem);
   }
 
   .ourSpecialtyStepsParentDiv p {
     margin: 0;
     color: rgb(75, 75, 75);
-    font-size: clamp(0.85rem, 1.55vw, 100rem);
+    font-size: clamp(0.75rem, 1.4vw, 90rem);
   }
 
   .ourSpecialtyStepsParentDiv > div:nth-child(2) {
@@ -68,13 +68,13 @@
   .ourSpecialtyStepsParentDiv h3 {
     margin: 0;
     color: rgb(75, 75, 75);
-    font-size: clamp(1.16rem, 1.85vw, 100rem);
+    font-size: clamp(1.12rem, 1.7vw, 90rem);
   }
 
   .ourSpecialtyStepsParentDiv p {
     margin: 0;
     color: rgb(75, 75, 75);
-    font-size: clamp(0.85rem, 1.55vw, 100rem);
+    font-size: clamp(0.75rem, 1.4vw, 90rem);
   }
 
   .ourSpecialtyStepsParentDiv > div:nth-child(2) {
@@ -88,14 +88,14 @@
     background: linear-gradient(to bottom, rgb(75, 75, 75), white);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 6vw;
+    font-size: 5vw;
   }
 }
 @media (min-width: 1024px) {
   .logoShieldContainer {
     background-color: #2c75ff;
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -132,6 +132,6 @@
     background: linear-gradient(to bottom, rgb(75, 75, 75), white);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }

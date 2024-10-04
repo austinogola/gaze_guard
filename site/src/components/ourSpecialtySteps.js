@@ -9,10 +9,10 @@ function OurSpecialtySteps({ title, paragraph, number }) {
         <img src={logoShield} alt="" />
       </div>
       <div>
-        <h3>{title}</h3>
-        <p>{paragraph}</p>
+        <h3 className="title">{title}</h3>
+        <p className="reg">{paragraph}</p>
         <div>
-          <h1>{number}</h1>
+          <h1 className="title">{number}</h1>
         </div>
       </div>
     </div>

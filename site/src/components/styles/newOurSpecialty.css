@@ -1,3 +1,25 @@
+.howItWorksFloatingTitle{
+  padding: 0px;
+}
+.howItWorksFloatingTitle h4{
+  font-size: 1rem;
+  margin: 0px;
+  
+}
+
+.extensionSpann{
+  font-size: 1.7rem;
+  margin: 0px;
+  color: #2c75ff;
+  margin: 0px;
+  font-weight: 500;
+}
+
+.extensionTitle{
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin: 0px;
+}
 @media (max-width: 767px) {
   .ourSpecialtyStepsContainer {
     display: flex;

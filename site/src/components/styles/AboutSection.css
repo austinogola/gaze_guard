@@ -1,3 +1,16 @@
+.extensionText{
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+.extensionSpan {
+  color: #2c75ff;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.paragraphDiv{
+  font-size: 1rem;
+  /* font-weight: 400; */
+}
 @media (max-width: 450px) {
   .landing-section {
     display: grid;
@@ -25,7 +38,7 @@
 
   .darkImgDiv {
     width: 12.5rem;
-    top: 0;
+    top: -100px;
     left: 0;
   }
 
@@ -44,9 +57,6 @@
     width: 100%;
   }
 
-  .extensionSpan {
-    color: #2c75ff;
-  }
 
   .aboutSectionFloatingTitle {
     border-radius: 0.5rem;
@@ -139,7 +149,8 @@
   .darkImgDiv {
     position: absolute;
     width: 16rem;
-    top: 0;
+    /* top: 0; */
+    top: -100px;
     left: 5%;
   }
 
@@ -156,10 +167,6 @@
 
   .lightImgDiv img {
     width: 100%;
-  }
-
-  .extensionSpan {
-    color: #2c75ff;
   }
 
   .aboutSectionFloatingTitle {
@@ -255,7 +262,8 @@
 
   .darkImgDiv {
     width: 20rem;
-    top: 0;
+    /* top: 0; */
+    top: -100px;
     left: 0;
   }
 
@@ -274,9 +282,6 @@
     width: 100%;
   }
 
-  .extensionSpan {
-    color: #2c75ff;
-  }
 
   .aboutSectionFloatingTitle {
     border-radius: 0.5rem;
@@ -367,6 +372,7 @@
     width: clamp(10rem, 24vw, 15rem);
     top: 0;
     left: 0;
+    top: -100px;
   }
 
   .darkImgDiv img {
@@ -382,10 +388,6 @@
 
   .lightImgDiv img {
     width: 100%;
-  }
-
-  .extensionSpan {
-    color: #2c75ff;
   }
 
   .aboutSectionFloatingTitle {
