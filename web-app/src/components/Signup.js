@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useSearchParams } from 'react-router-dom';
 import { useCookies } from 'react-cookie'
 import axios from 'axios';
 import './styles/Signup.css';
@@ -12,6 +12,11 @@ function Signup() {
   const [apiError, setApiError] = useState('');
   const navigate = useNavigate();
 
+  const [searchParams] = useSearchParams();
+  const userParam = searchParams.get('bounce')
+  console.log(userParam)
+
+
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -20,7 +25,7 @@ function Signup() {
   // const SERVER_HOST='https://gazeguard-server-5be665b21a9f.herokuapp.com'
   // const SERVER_HOST='http://127.0.0.1:8000'
   //  const SERVER_HOST='http://localhost:5000'
-    const SERVER_HOST='https://server.gazegaurd.com'
+    const SERVER_HOST='https://server.gazeguard.io'
 
 
   const validateForm = () => {
@@ -48,7 +53,12 @@ function Signup() {
           date.setTime(date.getTime() + (21 * 24 * 60 * 60 * 1000)); // 21 days from now
           setCookie('gg_token',gg_token,{path:'/',expires:date})
           // document.cookie = `access=${response.data.access}; path=/;`;
-          navigate('/');
+          if(userParam){
+            navigate(`/${userParam}`)
+          }else{
+            navigate('/');
+          }
+          
         } else {
           setApiError(response.data.message);
         }

@@ -22,11 +22,9 @@ import vidImageWht from './Images/icons8-video-50-white.png'
 import imageImgBlack from './Images/icons8-image-50-black.png'
 import imageImgWhite from './Images/icons8-image-50-white.png'
 
-import './styles/Pricing.css'
-
 const Pricing=()=>{
     return(
-        <Box mb='150px' padding='0px' 
+        <Box mb='150px' padding='0px' className='title'
         backgroundColor='white' position='relative' id='pricing'>
 
             <Flex justifyContent='center' alignItems='center'>
@@ -45,12 +43,10 @@ porta ante non ante dignissim aliquam. Pellentesque nunc leo,
 pretium a lorem vel, ornare mollis leo.</Text>
             </Flex>
 
-            <Flex alignItems='center' mt='50px'
-            className='price-parent'>
-                <Flex w='80%' justifyContent='center' alignItems='center' flexWrap='wrap'>
-                    <Box  h='250px' backgroundColor='#F3F3F3' borderRadius='30px'
-                    className='price-holder'
-                      p='20px'>
+            <Flex justifyContent='center' alignItems='center' mt='50px'>
+                <Flex w='70%' justifyContent='center' alignItems='center'>
+                    <Box  h='250px' w='28%' backgroundColor='#F3F3F3'
+                    borderTopLeftRadius='30px' borderBottomLeftRadius='30px' p='20px'>
 
                         <Flex justifyContent='center' alignItems='center'>
                             <Text m={0} backgroundColor='white' color='#2C75FF' 
@@ -93,7 +89,7 @@ pretium a lorem vel, ornare mollis leo.</Text>
                     </Box>
 
 
-                    <Box borderRadius='30px' h='290px' className='price-holder' backgroundColor='#2C75FF' p='20px'>
+                    <Box borderRadius='30px' h='290px' w='28%' backgroundColor='#2C75FF' p='20px'>
                         <Flex justifyContent='center' alignItems='center'>
                             <Text m={0} backgroundColor='white' color='#2C75FF' 
                             fontWeight='500' pt='5px' pb='5px'
@@ -142,8 +138,8 @@ pretium a lorem vel, ornare mollis leo.</Text>
                     </Box>
 
 
-                    <Box  h='250px' className='price-holder' backgroundColor='#F3F3F3'
-                    borderRadius='30px' p='20px'>
+                    <Box  h='250px' w='28%' backgroundColor='#F3F3F3'
+                    borderTopRightRadius='30px' borderBottomRightRadius='30px' p='20px'>
                         <Flex justifyContent='center' alignItems='center' mt='10px'>
                             <Text m={0}  color='#2C75FF'  pt='5px' pb='5px' fontWeight='600'
                             textAlign='center' w='50%' borderRadius='999px' fontSize='15px'>

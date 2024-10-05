@@ -20,22 +20,24 @@ import Feature from './Feature';
 const OurSpecialty=()=>{
     return(
         <Box height={600} padding='0px' mb='150px'
+
         backgroundColor='white' position='relative' id='explore'>
 
             <Flex justifyContent='center' alignItems='center'>
                 <FloatingTitle text={"Our Specialty"}/>
             </Flex>
             <Box textAlign='center' >
-                    <Text lineHeight='50px'margin={0} fontWeight='500' fontSize='2.5rem'>
+                    <Text lineHeight='50px'margin={0} fontWeight='500' fontSize='2.5rem'
+                    className='title'>
                     Complete Solution for</Text>
-                    <Text margin={0} fontWeight='500' fontSize='2.5rem'>
+                    <Text margin={0} fontWeight='500' fontSize='2.5rem' className='title'>
                     your <Text as='span' color='#2C75FF'>Extension</Text>
                     </Text>
             </Box>
 
            
             <Flex justifyContent='center' alignItems='center'>
-            <Text textAlign='center' w='50%' fontSize='14px'>
+            <Text textAlign='center' w='60%' fontSize='14px' className='reg'>
             Nulla facilisi. Donec laoreet velit at dui interdum, et
             rhoncus leo vehicula. Nam rutrum diam eu
             pellentesque ornare. Maecenas laoreet turpis pharetra
@@ -46,7 +48,7 @@ const OurSpecialty=()=>{
             </Flex>
 
             <Flex justifyContent='center' alignItems='center' mt='75px'>
-                <Flex w='60%' justifyContent='space-between' alignItems='center'>
+                <Flex w='70%' justifyContent='space-between' alignItems='center'>
                     <Feature text={'Huge Collection'} num={'01'}
                         explanation='Nulla facilisi. Donec laoreet velit at dui interdum'
                     />

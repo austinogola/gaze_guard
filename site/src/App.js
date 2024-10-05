@@ -1,10 +1,12 @@
 
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
-import Privacy from './components/Privacy';
-import Terms from './components/Terms';
-
+import Home2 from './components/Home';
+// import Privacy from './components/Privacy';
+// import Terms from './components/Terms';
+import Home from './pages/Home'
+import Privacy from './pages/Privacy'
+import Terms from './pages/Terms'
 
 function App() {
   return (

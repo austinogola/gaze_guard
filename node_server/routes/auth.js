@@ -131,9 +131,12 @@ function getMemberUsageRemnants(the_account) {
 
     if (typeof maxImages === 'number') {
         // Filter for today's images
+        console.log('allimages',usage)
         const imagesToday = usage.filter(obj => {
             return obj.time_added >= startOfToday && obj.time_added < startOfTomorrow && obj.type === 'image';
         });
+        console.log('imagesToday',imagesToday)
+        console.log('startOfToday',startOfToday,'startOfTomorrow',startOfTomorrow)
         remainingImages = maxImages - imagesToday.length;
     }
 
@@ -198,7 +201,7 @@ router.post('/api/usage', authenticateJWT, async (req, res) => {
                 });
                 await account.save();
             } else {
-                prev_obj.minutes += minutes;
+                prev_obj.minutes += time;
                 await account.save();
             }
         }

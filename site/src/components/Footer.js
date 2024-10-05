@@ -5,13 +5,13 @@ import {Box,
     Input,
     FormControl,
     HStack,
-    Link,
     IconButton,
     Button,
     useDisclosure,
     useColorModeValue,
     Stack,} from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import FloatingTitle from './FloatingTitle';
 import mainImage from './Images/main.png'
@@ -53,32 +53,32 @@ const Footer=()=>{
                     </Flex>
                     <Flex  justifyContent='space-around' alignItems='center'
                     id='footerLinks'>
-                        <Link href='#' textDecoration='none' >
+                        <Link to='/' textDecoration='none' >
                             Home
                         </Link>
-                        <Link href='/terms' textDecoration='none' target='_blank'>
+                        <Link to='/terms' textDecoration='none' >
                             Terms
                         </Link>
-                        <Link href='/privacy' textDecoration='none' target='_blank'>
+                        <Link to='/privacy' textDecoration='none'>
                             Privacy
                         </Link>
-                        <Link href='/contact' textDecoration='none' target='_blank'>
+                        <Link to='/contact' textDecoration='none'>
                             Contact
                         </Link>
                        
                     </Flex>
                     <Flex alignItems='center'
                     id='footerSocial'>
-                        <Link href='#'>
+                        <Link to='#'>
                             <Image src={fbImg} w='25px'/>
                         </Link>
-                        <Link href='#'>
+                        <Link to='#'>
                             <Image src={igImg} w='25px' />
                         </Link>
-                        <Link href='#'>
+                        <Link to='#'>
                             <Image src={tgImg} w='25px'/>
                         </Link>
-                        <Link href='#'>
+                        <Link to='#'>
                             <Image src={xImg} w='25px'/>
                         </Link>
                         

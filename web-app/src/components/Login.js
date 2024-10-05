@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useSearchParams  } from 'react-router-dom';
 import { useCookies } from 'react-cookie'
 import axios from 'axios';
 import './styles/Login.css';
@@ -15,11 +15,16 @@ function Login() {
 
   const [loading, setLoading] = useState(false);
 
+  const [searchParams] = useSearchParams();
+  const userParam = searchParams.get('bounce')
+  console.log(userParam)
+
+
   // const SERVER_HOST= process.env.REACT_APP_SERVER_HOST;
   // const SERVER_HOST='http://213.148.17.135:8000'
   // const SERVER_HOST='https://gazeguard-server-5be665b21a9f.herokuapp.com'
   // const SERVER_HOST='http://localhost:5000'
-  const SERVER_HOST='https://server.gazegaurd.com'
+  const SERVER_HOST='https://server.gazeguard.io'
 
   const validateForm = () => {
     const newErrors = {};
@@ -45,7 +50,11 @@ function Login() {
           date.setTime(date.getTime() + (21 * 24 * 60 * 60 * 1000)); // 21 days from now
           setCookie('gg_token',gg_token,{path:'/',expires:date})
           // document.cookie = `access=${response.data.access}; path=/;`;
-          navigate('/');
+          if(userParam){
+            navigate(`/${userParam}`)
+          }else{
+            navigate('/');
+          }
         } else {
           setApiError(response.data.message);
         }

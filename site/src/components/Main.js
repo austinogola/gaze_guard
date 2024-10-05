@@ -25,15 +25,28 @@ const Main=()=>{
     
     return(
         <Box padding='0px' backgroundImage={mainImage}  zIndex='1'
-        width='100vw' w='100vw' mb='100px'
+        mb='150px'
         height='700px' position='relative' id='home'
         backgroundSize='cover' backgroundPosition='center' backgroundRepeat='no-repeat'>
          <Box>
             <Navbar/>
          </Box>
-
          <Box zIndex={2} color='white' textAlign='center' pt='40px'
-            id='main_text_parent' px='10px'>
+            id='main_text_parent' px='10px'
+            className='title'>
+
+            <Text fontWeight={900} margin='0px' padding='0px' id='bold'>
+            YOUR GAZE</Text>
+            <Text fontWeight={900} margin='0px' padding='0px' id='bold'>
+            IS AN</Text>
+            <Text fontWeight={900} color='#2C75FF' margin='0px' id='bold'>
+            AMMANAH
+            </Text>
+         </Box>
+
+         {/* <Box zIndex={2} color='white' textAlign='center' pt='40px'
+            id='main_text_parent' px='10px'
+            className='title'>
             <Text fontWeight={900} margin='0px' padding='0px' id='bold'>
             SHIELD YOUR </Text>
             <Text fontWeight={900} color='#2C75FF' margin='0px' id='bold'>
@@ -46,8 +59,9 @@ const Main=()=>{
             </Text>
             <Text fontWeight={900} margin='0px' padding='0px' id='bold'>
             CONTENT. </Text>
-         </Box>
-         <Flex justifyContent='center' alignItems='center' mt='10px' >
+         </Box> */}
+         <Flex justifyContent='center' alignItems='center' mt='10px'
+         className='reg' >
             <Text textAlign='center' fontSize='1.2rem'margin='0px' w='80%' color='white' fontWeight={500}>
             Use Our AI trained smart filter to protect you from unwanted content, so you can surf safely.
             </Text>
