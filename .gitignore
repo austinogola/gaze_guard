@@ -10,8 +10,11 @@
 
 # production
 /build
+/build2
 /venv
 /admin-site
+/tours_server
+
 
 *.zip
 
