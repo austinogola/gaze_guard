@@ -174,7 +174,7 @@ a {
 }
 @media screen and (min-width: 1024px) {
   .PricingParentContainer {
-    margin-bottom: 5%;
+    margin-bottom: 10%;
   }
 
   .plansParentDiv {
@@ -323,6 +323,7 @@ a {
     display: flex;
     align-items: center;
     margin-top: 5%;
+    margin-bottom: 10%;
   }
 
   .pricingPlans h1 {

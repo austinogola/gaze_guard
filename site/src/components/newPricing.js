@@ -1,9 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/newPricing.css";
 import plansImage from "./Images/icons8-image-50-black.png";
 import plansVideo from "./Images/icons8-video-50-black.png";
 import plansImageWhite from "./Images/icons8-image-50-white.png";
 import plansVideoWhite from "./Images/icons8-video-50-white.png";
+
+const LazyImage = ({ src, alt, className }) => {
+  const [imageSrc, setImageSrc] = useState(null);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = src;
+
+    img.onload = () => setImageSrc(src);
+    img.onerror = () => setError(true); // Handle error
+
+    return () => {
+      setImageSrc(null); // Clean up on unmount
+      setError(false);
+    };
+  }, [src]);
+
+  return error ? (
+    <div
+      className={`error-placeholder ${className}`}
+      style={{ width: "100%", height: "100%" }}
+    >
+      <p>Error loading image</p>
+    </div>
+  ) : imageSrc ? (
+    <img src={imageSrc} alt={alt} className={className} loading="lazy" />
+  ) : (
+    <div
+      className={`image-placeholder ${className}`}
+      style={{ width: "100%", height: "100%" }}
+    />
+  );
+};
 
 function Pricing() {
   return (
@@ -35,29 +69,29 @@ function Pricing() {
           <div className="imageDivsParent">
             <div className="plansImagesDiv">
               <div>
-                <img src={plansImage} alt="plansImage" />
+                <LazyImage src={plansImage} alt="plansImage" />
               </div>
-
               <p>
                 <span className="bolderText">60</span> Minutes / Day
               </p>
             </div>
             <div className="plansImagesDiv">
               <div>
-                <img src={plansVideo} alt="plansImage" />
+                <LazyImage src={plansVideo} alt="plansVideo" />
               </div>
-
               <p>
                 <span className="bolderText">5</span> Minutes Video / Day
               </p>
             </div>
           </div>
           <div className="buttonDivPricingContainer">
-            <a href='https://app.gazeguard.io/plans' 
-            target="_blank" rel="noreferrer">
+            <a
+              href="https://app.gazeguard.io/plans"
+              target="_blank"
+              rel="noreferrer"
+            >
               <button>CHOOSE PLAN</button>
             </a>
-            
           </div>
         </div>
         <div className="pricingPlans premiumPlan">
@@ -76,28 +110,29 @@ function Pricing() {
           <div className="imageDivsParent">
             <div className="plansImagesDiv">
               <div>
-                <img src={plansImageWhite} alt="plansImage" />
+                <LazyImage src={plansImageWhite} alt="plansImageWhite" />
               </div>
-
               <p>
                 <span className="bolderText">Unlimited</span> Images
               </p>
             </div>
             <div className="plansImagesDiv">
               <div>
-                <img src={plansVideoWhite} alt="plansImage" />
+                <LazyImage src={plansVideoWhite} alt="plansVideoWhite" />
               </div>
-
               <p>
                 <span className="bolderText">45</span> Minutes Video / Day
               </p>
             </div>
           </div>
           <div className="buttonDivPricingContainer">
-           <a href='https://app.gazeguard.io/plans' target="_blank" rel="noreferrer">
+            <a
+              href="https://app.gazeguard.io/plans"
+              target="_blank"
+              rel="noreferrer"
+            >
               <button>CHOOSE PLAN</button>
-           </a>
-            
+            </a>
           </div>
         </div>
         <div className="pricingPlans deluxePlan">
@@ -113,7 +148,7 @@ function Pricing() {
           <div className="imageDivsParent">
             <div className="plansImagesDiv">
               <div>
-                <img src={plansImage} alt="plansImage" />
+                <LazyImage src={plansImage} alt="plansImage" />
               </div>
               <p>
                 <span className="bolderText">unlimited</span> Images
@@ -121,7 +156,7 @@ function Pricing() {
             </div>
             <div className="plansImagesDiv">
               <div>
-                <img src={plansVideo} alt="plansImage" />
+                <LazyImage src={plansVideo} alt="plansVideo" />
               </div>
               <p>
                 <span className="bolderText">Unlimited</span> Videos
@@ -129,10 +164,13 @@ function Pricing() {
             </div>
           </div>
           <div className="buttonDivPricingContainer">
-            <a href='https://app.gazeguard.io/plan' target="_blank" rel="noreferrer">
+            <a
+              href="https://app.gazeguard.io/plan"
+              target="_blank"
+              rel="noreferrer"
+            >
               <button>CHOOSE PLAN</button>
             </a>
-            
           </div>
         </div>
       </div>

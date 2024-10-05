@@ -100,6 +100,13 @@ const Main = () => {
           <Image src={arrowsImage} w="70px" cursor="pointer" />
         </Link>
       </div>
+
+      {/* <Flex justifyContent='center' alignItems='center' position='relative' top='80px'>
+            <Link href='#features'>
+               <Image src={arrowsImage} w='70px' cursor='pointer'/>
+            </Link>
+            
+         </Flex> */}
     </Box>
   );
 };
