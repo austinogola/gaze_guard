@@ -11,7 +11,7 @@ router.use(authenticateJWT);
 
 const STRIPE_WEBHOOK_SECRET=process.env.stripe_webhook_secret
 
-const STRIPE=new Stripe(process.env.stripe_secret_key)
+const STRIPE=new Stripe('your_stripe_secret_key_here')
 
 router.post('/', async(req, res, next) => {
     const sig=req.headers['stripe-signature']
