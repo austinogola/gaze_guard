@@ -106,6 +106,8 @@ const CheckoutForm = () => {
       const data = await response.json();
       if (data.status === 'success') {
         console.log('Payment successful');
+        alert('Subscription created successfully!');
+        navigate('/dashboard'); // Redirect to the dashboard or confirmation page
       } else {
         console.error('Payment failed', data.message);
         alert(`Payment failed: ${data.message}`);
