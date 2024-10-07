@@ -135,7 +135,7 @@ const CheckoutForm = () => {
             />
           </div>
           <div className="form-group card-details">
-            <CardElement options={{ style: { base: { fontSize: '16px' } } }} />
+            <CardElement options={{ style: { base: { fontSize: '16px' } }, hidePostalCode: true }} />
           </div>
           <div className="form-group">
             {/* <label htmlFor="postalCode">Postal Code</label> */}
