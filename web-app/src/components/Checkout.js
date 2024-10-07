@@ -7,6 +7,7 @@ const Checkout = () => {
  
   const [cookies] = useCookies(['gg_token']);
   const [planDetails, setPlanDetails] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!cookies.gg_token) {
