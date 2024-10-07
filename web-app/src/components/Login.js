@@ -53,7 +53,7 @@ function Login() {
           if(userParam){
             navigate(`/${userParam}`)
           }else{
-            navigate('/');
+            navigate(`/${userParam || ''}`);
           }
         } else {
           setApiError(response.data.message);

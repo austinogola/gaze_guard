@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useParams,useSearchParams } from 'react-router-dom';
-import './styles/Checkout.css'
+import { useCookies } from 'react-cookie';
+import './styles/Checkout.css';
 
 const Checkout = () => {
  
+  const [cookies] = useCookies(['gg_token']);
   const [planDetails, setPlanDetails] = useState({});
+
+  useEffect(() => {
+    if (!cookies.gg_token) {
+      navigate(`/login?bounce=checkout`);
+    }
+  }, [cookies, navigate]);
 
   const [searchParams] = useSearchParams();
   const planType = searchParams.get('plan')

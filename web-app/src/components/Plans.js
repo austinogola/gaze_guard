@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import './styles/Plans.css'
 
 const Plans = () => {
+  const [cookies] = useCookies(['gg_token']);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!cookies.gg_token) {
+      navigate(`/login?bounce=plans`);
+    }
+  }, [cookies, navigate]);
 
   const handleChoosePlan = (plan) => {
     // Navigate to payment page with the selected plan

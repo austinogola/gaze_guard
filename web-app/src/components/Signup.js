@@ -56,7 +56,7 @@ function Signup() {
           if(userParam){
             navigate(`/${userParam}`)
           }else{
-            navigate('/');
+            navigate(`/${userParam || ''}`);
           }
           
         } else {
