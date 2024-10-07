@@ -86,6 +86,21 @@ router.post('/create-subscription',authenticateJWT, async (req, res, next) => {
             email: req.user.email, // Assuming email is part of formData
             // source: formData.token, // Assuming token is generated on the client-side
             payment_method:formData.token,
+            invoice_settings: {
+                default_payment_method: formData.token,
+            },
+        });
+
+        // Attach the payment method to the customer
+        await STRIPE.paymentMethods.attach(formData.token, {
+            customer: customer.id,
+        });
+
+        // Set the payment method as the default payment method
+        await STRIPE.customers.update(customer.id, {
+            invoice_settings: {
+                default_payment_method: formData.token,
+            },
         });
 
         console.log(customer)
