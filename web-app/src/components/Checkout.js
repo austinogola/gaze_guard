@@ -70,6 +70,7 @@ const CheckoutForm = () => {
         credentials: "same-origin",
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${cookies.gg_token}`,
         },
         body: JSON.stringify({
           planType,
@@ -81,13 +82,15 @@ const CheckoutForm = () => {
         }),
       });
       const data = await response.json();
-      if (data.success) {
+      if (data.status === 'success') {
         console.log('Payment successful');
       } else {
-        console.error('Payment failed', data.error);
+        console.error('Payment failed', data.message);
+        alert(`Payment failed: ${data.message}`);
       }
     } catch (error) {
       console.error('Error processing payment', error);
+      alert(`Error processing payment: ${error.message}`);
     }
   };
 
