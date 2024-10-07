@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
@@ -8,11 +8,13 @@ import './styles/Checkout.css';
 const stripePromise = loadStripe('your-publishable-key-here');
 
 const Checkout = () => {
- 
   const stripe = useStripe();
   const elements = useElements();
   const [planDetails, setPlanDetails] = useState({});
   const navigate = useNavigate();
+  const [cookies] = useCookies(['gg_token']);
+  const [searchParams] = useSearchParams();
+  const planType = searchParams.get('plan');
 
   useEffect(() => {
     if (!cookies.gg_token) {
@@ -20,12 +22,7 @@ const Checkout = () => {
     }
   }, [cookies, navigate]);
 
-  const [searchParams] = useSearchParams();
-  const planType = searchParams.get('plan')
-
   useEffect(() => {
-    // Fetch plan details based on planType
-    // This is a placeholder. In a real app, you'd fetch this from an API
     const details = {
       free: { name: 'Free Plan', price: 0 },
       premium: { name: 'Premium Plan', price: 6 },
@@ -43,6 +40,7 @@ const Checkout = () => {
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -73,7 +71,7 @@ const Checkout = () => {
           planType,
           formData: {
             name: formData.name,
-            email: cookies.email, // Assuming email is stored in cookies
+            email: cookies.email,
             token: paymentMethod.id,
           },
         }),
@@ -86,7 +84,6 @@ const Checkout = () => {
       }
     } catch (error) {
       console.error('Error processing payment', error);
-
     }
   };
 
@@ -141,4 +138,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout
+export default Checkout;
