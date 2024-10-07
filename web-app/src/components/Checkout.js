@@ -7,7 +7,7 @@ import './styles/Checkout.css';
 
 const stripePromise = loadStripe('your-publishable-key-here');
 
-const Checkout = () => {
+const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const [planDetails, setPlanDetails] = useState({});
@@ -88,54 +88,58 @@ const Checkout = () => {
   };
 
   return (
-    <Elements stripe={stripePromise}>
-      <div className="checkout-container">
-        <h1>Checkout</h1>
-        <div className="checkout-content">
-          <form className="payment-form" onSubmit={handleSubmit}>
-            <h2>Credit/Debit Card</h2>
-            <div className="form-group">
-              <label htmlFor="name">Name On Card</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <CardElement />
-            </div>
-            <button className="pay-button" type="submit">Pay Now</button>
-          </form>
-          <div className="plan-details">
-            <h2>Plan Details</h2>
-            <div className="plan-info">
-              <img src="/path-to-plan-icon.png" alt="Plan Icon" className="plan-icon" />
-              <div>
-                <h3>{planDetails.name || 'Selected Plan'}</h3>
-                <p>${planDetails.price}/month</p>
-              </div>
-            </div>
-            <div className="promo-code">
-              <input type="text" placeholder="Enter code here" />
-              <button>Apply</button>
-            </div>
-            <div className="total">
-              <p>Total</p>
-              <p>${planDetails.price}</p>
-            </div>
-            <p className="terms">
-              By checking out you agree with our Terms of Service and confirm that you have read our
-              Privacy Policy. You can cancel recurring payments at any time.
-            </p>
+    <div className="checkout-container">
+      <h1>Checkout</h1>
+      <div className="checkout-content">
+        <form className="payment-form" onSubmit={handleSubmit}>
+          <h2>Credit/Debit Card</h2>
+          <div className="form-group">
+            <label htmlFor="name">Name On Card</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+            />
           </div>
+          <div className="form-group">
+            <CardElement />
+          </div>
+          <button className="pay-button" type="submit">Pay Now</button>
+        </form>
+        <div className="plan-details">
+          <h2>Plan Details</h2>
+          <div className="plan-info">
+            <img src="/path-to-plan-icon.png" alt="Plan Icon" className="plan-icon" />
+            <div>
+              <h3>{planDetails.name || 'Selected Plan'}</h3>
+              <p>${planDetails.price}/month</p>
+            </div>
+          </div>
+          <div className="promo-code">
+            <input type="text" placeholder="Enter code here" />
+            <button>Apply</button>
+          </div>
+          <div className="total">
+            <p>Total</p>
+            <p>${planDetails.price}</p>
+          </div>
+          <p className="terms">
+            By checking out you agree with our Terms of Service and confirm that you have read our
+            Privacy Policy. You can cancel recurring payments at any time.
+          </p>
         </div>
       </div>
-    </Elements>
+    </div>
   );
 };
+
+const Checkout = () => (
+  <Elements stripe={stripePromise}>
+    <CheckoutForm />
+  </Elements>
+);
 
 export default Checkout;
