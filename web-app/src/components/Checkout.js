@@ -4,6 +4,7 @@ import { useCookies } from 'react-cookie';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import './styles/Checkout.css';
+import './styles/CardForm.css';
 
 const stripePromise = loadStripe('your-publishable-key-here');
 
@@ -35,7 +36,8 @@ const CheckoutForm = () => {
     name: '',
     cardNumber: '',
     expiry: '',
-    cvc: ''
+    cvc: '',
+    postalCode: ''
   });
 
   const handleInputChange = (e) => {
@@ -104,8 +106,19 @@ const CheckoutForm = () => {
               required
             />
           </div>
+          <div className="form-group card-details">
+            <CardElement options={{ style: { base: { fontSize: '16px' } } }} />
+          </div>
           <div className="form-group">
-            <CardElement />
+            <label htmlFor="postalCode">Postal Code</label>
+            <input
+              type="text"
+              id="postalCode"
+              name="postalCode"
+              value={formData.postalCode}
+              onChange={handleInputChange}
+              required
+            />
           </div>
           <button className="pay-button" type="submit">Pay Now</button>
         </form>
