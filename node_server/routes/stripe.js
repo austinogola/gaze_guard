@@ -89,6 +89,7 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
         case 'invoice.payment_succeeded':
             const invoice = event.data.object;
             console.log(`Payment for invoice ${invoice.id} succeeded.`);
+            console.log('Event data:', event.data);
             // Here you can update your database to mark the subscription as active
             break;
         // Add more cases to handle other event types if needed
