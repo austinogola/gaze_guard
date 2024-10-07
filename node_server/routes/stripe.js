@@ -4,7 +4,10 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const Member = require('../models/Member');
 const Account = require('../models/Account');
+const { authenticateJWT } = require('../middleware/token');
 const router = express.Router();
+
+router.use(authenticateJWT);
 
 const STRIPE_WEBHOOK_SECRET=process.env.stripe_webhook_secret
 
