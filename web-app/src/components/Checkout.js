@@ -44,6 +44,7 @@ const CheckoutForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const serverUrl='http://localhost:5000'
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -53,19 +54,20 @@ const CheckoutForm = () => {
 
     const cardElement = elements.getElement(CardElement);
 
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
-      type: 'card',
-      card: cardElement,
-    });
+    // const { error, paymentMethod } = await stripe.createPaymentMethod({
+    //   type: 'card',
+    //   card: cardElement,
+    // });
 
-    if (error) {
-      console.error('Error creating payment method:', error);
-      return;
-    }
+    // if (error) {
+    //   console.error('Error creating payment method:', error);
+    //   return;
+    // }
 
     try {
-      const response = await fetch('/api/stripe/create-subscription', {
+      const response = await fetch(`${serverUrl}/stripe/create-subscription`, {
         method: 'POST',
+        credentials: "same-origin",
         headers: {
           'Content-Type': 'application/json',
         },
@@ -74,7 +76,7 @@ const CheckoutForm = () => {
           formData: {
             name: formData.name,
             email: cookies.email,
-            token: paymentMethod.id,
+            // token: paymentMethod.id,
           },
         }),
       });
