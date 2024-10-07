@@ -23,8 +23,8 @@ function Login() {
   // const SERVER_HOST= process.env.REACT_APP_SERVER_HOST;
   // const SERVER_HOST='http://213.148.17.135:8000'
   // const SERVER_HOST='https://gazeguard-server-5be665b21a9f.herokuapp.com'
-  // const SERVER_HOST='http://localhost:5000'
-  const SERVER_HOST='https://server.gazeguard.io'
+  const SERVER_HOST='http://localhost:5000'
+  // const SERVER_HOST='https://server.gazeguard.io'
 
   const validateForm = () => {
     const newErrors = {};

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const authRoutes = require('./routes/auth');
+const stripeRoutes = require('./routes/stripe');
 require('dotenv').config();
 const cors=require('cors')
 var bodyParser = require('body-parser')
@@ -12,7 +13,19 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors())
+const allowedOrigins = [
+    'http://localhost:3000',
+     "https://app.gazeguard.io",
+    "https://www.app.gazeguard.io",
+    "https://www.gazeguard.io",
+    "https://server.gazeguard.io",
+    "https://gazeguard.io",
+  ];            
+app.use(cors({
+    origin:allowedOrigins,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }));
@@ -27,6 +40,7 @@ require('./config/passport')
 
 // Routes
 app.use('/auth', authRoutes);
+app.use('/stripe', stripeRoutes);
 
 // Connect to MongoDB
 mongoose.connect(process.env.db_url, {

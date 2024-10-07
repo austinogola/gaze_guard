@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Usage from './components/Usage';
 import Settings from './components/Settings';
 import Plans from './components/Plans';
+import Checkout from './components/Checkout';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/plans" element={<Plans />} />
         <Route path="/usage" element={<Usage />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </Router>
   );

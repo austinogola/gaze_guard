@@ -7,7 +7,7 @@ const Plans = () => {
 
   const handleChoosePlan = (plan) => {
     // Navigate to payment page with the selected plan
-    navigate(`/payment?plan=${plan}`);
+    navigate(`/checkout?plan=${plan}`);
   };
 
   return (

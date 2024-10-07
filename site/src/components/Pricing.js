@@ -48,8 +48,8 @@ pretium a lorem vel, ornare mollis leo.</Text>
                     <Box  h='250px' w='28%' backgroundColor='#F3F3F3'
                     borderTopLeftRadius='30px' borderBottomLeftRadius='30px' p='20px'>
 
-                        <Flex justifyContent='center' alignItems='center'>
-                            <Text m={0} backgroundColor='white' color='#2C75FF' 
+                        <Flex justifyContent='center' alignItems='center' >
+                            <Text m={0} backgroundColor='white' color='#2C75FF' className="title"
                             fontWeight='500' pt='5px' pb='5px'
                             textAlign='center' w='50%' borderRadius='999px' fontSize='10px'>
                             RECOMMENDED</Text>

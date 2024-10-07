@@ -30,7 +30,7 @@ const authenticateJWT = (req, res, next) => {
 
 
 // console.log(process.env.jwtSecret)
-console.log(token)
+// console.log(token)
     jwt.verify(token, 'qwertyuiopasdfghjklzxcvbnm', (err, user) => {
         console.log(user)
         // console.log(err)

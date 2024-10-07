@@ -58,8 +58,6 @@
   /* Specify the correct path to the font files */
 }
 
-
-
 @font-face {
   font-family: "Montserrat";
   src: url("./fonts/montserrat/Montserrat-Medium.ttf") format("opentype");
@@ -73,15 +71,15 @@
   /* Specify the correct path to the font files */
 }
 
-*.title{
-  font-family: 'MonumentExtended';
+*.title {
+  font-family: "MonumentExtended";
 }
 
-*.reg{
-  font-family: 'Montserrat';
+*.reg {
+  font-family: "Montserrat";
 }
-*.title-bold{
-  font-family: 'MonumentExtendedBold';
+*.title-bold {
+  font-family: "MonumentExtendedBold";
 }
 
 /* *#bold{
@@ -110,7 +108,7 @@ p {
 #main_text_parent p,
 #main_text_parent span {
   font-size: 7rem;
-  font-family: 'MonumentExtendedBold';
+  font-family: "MonumentExtendedBold";
   margin: 0px;
 }
 
@@ -219,11 +217,22 @@ a[href] button:hover {
   }
 }
 @media only screen and (max-width: 350px) {
-  #main_text_parent{
+  #main_text_parent {
     line-height: 200px;
   }
   #main_text_parent p,
   #main_text_parent span {
     font-size: 2.8rem;
   }
+}
+
+.arrowsBottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.arrowsBottom img {
+  width: 90%;
 }
