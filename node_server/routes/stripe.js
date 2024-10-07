@@ -24,14 +24,14 @@ const PLANS={
          price:6.0,
       images:'Unlimited Minutes/Day',
       video:"45 Minutes/Day",
-      id:'prod_QzFeqXA33eYraC'
+      id:'price_1Q7H9OP0Bii0CHodYPqqqEmd'
     },
     Deluxe:{
       name:"Deluxe",
         price:9.9,
       images:'Unlimited Minutes/Day',
       video:"Unlimited Minutes/Day",
-      id:'prod_QzFgjWlCES6Z6K'
+      id:'price_1Q7HBFP0Bii0CHodsHrXHIEt'
     }
   }
 
@@ -62,7 +62,7 @@ const getSubsriptions=async()=>{
     // })
 }
 
-getSubsriptions()
+// getSubsriptions()
 
 router.get('/get-plans',authenticateJWT,async (req, res, next)=>{
     res.status(200).json({plans:PLANS})
@@ -83,7 +83,7 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
         console.error(`Webhook signature verification failed: ${err.message}`);
         return res.status(400).send(`Webhook Error: ${err.message}`);
     }
-
+    console.log(event)
     // Handle the event
     switch (event.type) {
         case 'invoice.payment_succeeded':
