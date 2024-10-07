@@ -72,8 +72,32 @@ router.get('/get-plan/:id',authenticateJWT,async (req, res, next)=>{
     res.status(200).json({plan:thePlan})
 })
 
-router.post('/', async(req, res, next) => {
-    const sig=req.headers['stripe-signature']
+router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
+    const sig = req.headers['stripe-signature'];
+
+    let event;
+
+    try {
+        event = STRIPE.webhooks.constructEvent(req.body, sig, STRIPE_WEBHOOK_SECRET);
+    } catch (err) {
+        console.error(`Webhook signature verification failed: ${err.message}`);
+        return res.status(400).send(`Webhook Error: ${err.message}`);
+    }
+
+    // Handle the event
+    switch (event.type) {
+        case 'invoice.payment_succeeded':
+            const invoice = event.data.object;
+            console.log(`Payment for invoice ${invoice.id} succeeded.`);
+            // Here you can update your database to mark the subscription as active
+            break;
+        // Add more cases to handle other event types if needed
+        default:
+            console.log(`Unhandled event type ${event.type}`);
+    }
+
+    // Return a response to acknowledge receipt of the event
+    res.json({ received: true });
 });
 
 router.post('/create-subscription',authenticateJWT, async (req, res, next) => {
