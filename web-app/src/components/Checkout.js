@@ -43,7 +43,6 @@ const Checkout = () => {
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -87,8 +86,6 @@ const Checkout = () => {
       }
     } catch (error) {
       console.error('Error processing payment', error);
-    }
-  };
 
     }
   };
