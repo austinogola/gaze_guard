@@ -6,7 +6,11 @@ import { Elements, CardElement, useStripe, useElements } from '@stripe/react-str
 import './styles/Checkout.css';
 import './styles/CardForm.css';
 
-const stripePromise = loadStripe('your-publishable-key-here');
+const stripePromise = loadStripe('pk_test_51PVhnYP0Bii0CHodYFMJnvAvTOcLVJbdkIWQ0mC0hXbiIlbkqk8ufavNpKEC6KLEtJJeQQVdWaX4nd3R7BtfPpfU00lLZdUrdW');
+
+
+
+
 
 const CheckoutForm = () => {
   const stripe = useStripe();
@@ -23,13 +27,31 @@ const CheckoutForm = () => {
     }
   }, [cookies, navigate]);
 
+  const getPlan=()=>{
+    fetch(`${serverUrl}/stripe/get-plan/${planType}`,{
+      method:'GET',
+      credentials: "same-origin",
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${cookies.gg_token}`,
+        },
+    }).then(async resp=>{
+      const res=await resp.json()
+      console.log(res)
+      setPlanDetails(res.plan)
+      // setPLANS(res.plans)
+    })
+  }
+
+
   useEffect(() => {
     const details = {
       free: { name: 'Free Plan', price: 0 },
       premium: { name: 'Premium Plan', price: 6 },
       deluxe: { name: 'Deluxe Plan', price: 9.9 }
     };
-    setPlanDetails(details[planType] || {});
+    // setPlanDetails(details[planType] || {});
+    getPlan()
   }, [planType]);
 
   const [formData, setFormData] = useState({
@@ -37,7 +59,7 @@ const CheckoutForm = () => {
     cardNumber: '',
     expiry: '',
     cvc: '',
-    postalCode: ''
+    // postalCode: ''
   });
 
   const handleInputChange = (e) => {
@@ -54,15 +76,16 @@ const CheckoutForm = () => {
 
     const cardElement = elements.getElement(CardElement);
 
-    // const { error, paymentMethod } = await stripe.createPaymentMethod({
-    //   type: 'card',
-    //   card: cardElement,
-    // });
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: 'card',
+      card: cardElement,
+      hidePostalCode : true
+    });
 
-    // if (error) {
-    //   console.error('Error creating payment method:', error);
-    //   return;
-    // }
+    if (error) {
+      console.error('Error creating payment method:', error);
+      return;
+    }
 
     try {
       const response = await fetch(`${serverUrl}/stripe/create-subscription`, {
@@ -77,7 +100,7 @@ const CheckoutForm = () => {
           formData: {
             name: formData.name,
             email: cookies.email,
-            // token: paymentMethod.id,
+            token: paymentMethod.id,
           },
         }),
       });
@@ -115,15 +138,15 @@ const CheckoutForm = () => {
             <CardElement options={{ style: { base: { fontSize: '16px' } } }} />
           </div>
           <div className="form-group">
-            <label htmlFor="postalCode">Postal Code</label>
-            <input
+            {/* <label htmlFor="postalCode">Postal Code</label> */}
+            {/* <input
               type="text"
               id="postalCode"
               name="postalCode"
               value={formData.postalCode}
               onChange={handleInputChange}
               required
-            />
+            /> */}
           </div>
           <button className="pay-button" type="submit">Pay Now</button>
         </form>
