@@ -79,7 +79,6 @@ const CheckoutForm = () => {
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: cardElement,
-      hidePostalCode : true
     });
 
     if (error) {
