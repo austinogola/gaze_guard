@@ -31,10 +31,28 @@ const Checkout = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted', formData);
+    try {
+      const response = await fetch('/api/stripe/create-subscription', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          planType,
+          formData,
+        }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        console.log('Payment successful');
+      } else {
+        console.error('Payment failed', data.error);
+      }
+    } catch (error) {
+      console.error('Error processing payment', error);
+    }
   };
 
   return (

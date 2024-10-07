@@ -14,11 +14,25 @@ router.post('/', async(req, res, next) => {
     const sig=req.headers['stripe-signature']
 });
 
-router.post('/create-subscription',async(req,res,next)=>{
-    const STRIPE=new Stripe(process.env.stripe_secret_key)
-    const subscription = await STRIPE.subscriptions.create({
-        
-    })
-})
+router.post('/create-subscription', async (req, res, next) => {
+    try {
+        const { planType, formData } = req.body;
+        const customer = await STRIPE.customers.create({
+            name: formData.name,
+            email: formData.email, // Assuming email is part of formData
+            source: formData.token, // Assuming token is generated on the client-side
+        });
+
+        const subscription = await STRIPE.subscriptions.create({
+            customer: customer.id,
+            items: [{ plan: planType }],
+        });
+
+        res.json({ success: true, subscription });
+    } catch (error) {
+        console.error('Error creating subscription:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
 
 module.exports = router;
