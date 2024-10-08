@@ -4,7 +4,7 @@ const session = require('express-session');
 const passport = require('passport');
 const authRoutes = require('./routes/auth');
 const stripeRoutes = require('./routes/stripe');
-require('dotenv').config();
+const webhookRoutes = require('./routes/webhook');
 const cors=require('cors')
 var bodyParser = require('body-parser')
 const cookieParser=require('cookie-parser')
@@ -47,6 +47,7 @@ require('./config/passport')
 // Routes
 app.use('/auth', authRoutes);
 app.use('/stripe', stripeRoutes);
+app.use('/stripe', webhookRoutes);
 
 // Connect to MongoDB
 mongoose.connect(process.env.db_url, {
