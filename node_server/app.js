@@ -12,7 +12,13 @@ const cookieParser=require('cookie-parser')
 const app = express();
 
 // Middleware
-app.use(express.json());
+app.use((req, res, next) => {
+    if (req.originalUrl === '/stripe/webhook') {
+        next();
+    } else {
+        express.json()(req, res, next);
+    }
+});
 const allowedOrigins = [
     'http://localhost:3000',
      "https://app.gazeguard.io",
