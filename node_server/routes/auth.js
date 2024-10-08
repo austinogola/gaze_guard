@@ -52,8 +52,16 @@ router.post('/signup', async (req, res, next) => {
         await newMember.save();
         console.log(newMember)
 
-        const newAccount = new Account({ memberId:newMember._id, username, password,plan:'free',usage:[] });
-        await newAccount.save();
+        let newAccount;
+        try {
+            newAccount = new Account({ memberId: newMember._id, username, password, plan: 'free', usage: [] });
+            await newAccount.save();
+        } catch (err) {
+            console.error('Error creating account:', err);
+            // Retry account creation
+            newAccount = new Account({ memberId: newMember._id, username, password, plan: 'free', usage: [] });
+            await newAccount.save();
+        }
 
         // Automatically log in the user
         req.login(newMember, async err => {
