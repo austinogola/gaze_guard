@@ -8,7 +8,6 @@ const { authenticateJWT } = require('../middleware/token');
 const router = express.Router();
 require('dotenv').config();
 
-router.use(authenticateJWT);
 
 const PLANS={
     Free:{
@@ -83,7 +82,7 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
         console.error(`Webhook signature verification failed: ${err.message}`);
         return res.status(400).send(`Webhook Error: ${err.message}`);
     }
-    console.log(event)
+    console.log('jjjj',event.type)
     // Handle the event
     switch (event.type) {
         case 'invoice.payment_succeeded':
