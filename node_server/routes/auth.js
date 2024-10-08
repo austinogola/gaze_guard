@@ -45,7 +45,7 @@ const authenticateJWT = (req, res, next) => {
 router.post('/signup', async (req, res, next) => {
     try {
         const { email, username, password } = req.body;
-        console.log(email, username, password)
+        // console.log(email, username, password)
 
         // Create a new member
         const newMember = new Member({ email, username, password });
