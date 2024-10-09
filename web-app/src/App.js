@@ -1,13 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Signup from './components/Signup';
-import Login from './components/Login';
-import Home from './components/Home';
-import Usage from './components/Usage';
-import Settings from './components/Settings';
-import Plans from './components/Plans';
-import Checkout from './components/Checkout';
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import Home from "./components/Home";
+import Usage from "./components/Usage";
+import Settings from "./components/Settings";
+import Plans from "./components/Plans";
+import Checkout from "./components/Checkout";
 
 function App() {
   return (

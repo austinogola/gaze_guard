@@ -1,40 +1,101 @@
-const express = require('express');
-const Stripe = require('stripe');
-require('dotenv').config();
+const express = require("express");
+const Stripe = require("stripe");
+require("dotenv").config();
+const Account = require("../models/Account");
 
 const router = express.Router();
 
-const STRIPE_WEBHOOK_SECRET = process.env.stripe_webhook_secret;
-const STRIPE_SECRET_KEY = process.env.stripe_secret_key;
+const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
+const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 const STRIPE = new Stripe(STRIPE_SECRET_KEY);
 
-router.post('/', (req, res) => {
-    const sig = req.headers['stripe-signature'];
+async function handleInvoicePaymentSucceeded(invoice) {
+  console.log("Invoice payment succeeded:", invoice);
 
-    let event;
+  try {
+    const subscriptionId = invoice.subscription;
 
-    try {
-        event = STRIPE.webhooks.constructEvent(req.body, sig, STRIPE_WEBHOOK_SECRET);
-    } catch (err) {
-        console.error(`Webhook signature verification failed: ${err.message}`);
-        return res.status(400).send(`Webhook Error: ${err.message}`);
+    const account = await Account.findOne({
+      "payments.subscriptionId": subscriptionId,
+    });
+
+    if (account) {
+      console.log("Subscription exists in the database:", account);
+
+      const existingPayment = account.payments.find(
+        (payment) => payment.subscriptionId === subscriptionId
+      );
+
+      if (!existingPayment) {
+        const paymentDetails = {
+          subscriptionId,
+          customerId: invoice.customer,
+          status: invoice.status,
+          planId: invoice.lines.data[0].price.id,
+          amount: invoice.amount_paid / 100,
+          currency: invoice.currency,
+          created: new Date(invoice.created * 1000),
+          interval: invoice.billing_reason,
+          invoice_id: invoice.id,
+          payment_confirmed: true,
+        };
+
+        account.payments.push(paymentDetails);
+        await account.save();
+        console.log(
+          `Payment for invoice ${invoice.id} recorded in the database.`
+        );
+      } else {
+        if (!existingPayment.payment_confirmed) {
+          existingPayment.payment_confirmed = true;
+          await account.save();
+          console.log(`Payment confirmed for invoice ${invoice.id}.`);
+        } else {
+          console.log(`Payment for invoice ${invoice.id} already recorded.`);
+        }
+      }
+    } else {
+      console.log("No account found for subscription ID:", subscriptionId);
     }
-    console.log('jjjj', event.type);
-    // Handle the event
-    switch (event.type) {
-        case 'invoice.payment_succeeded':
-            const invoice = event.data.object;
-            console.log(`Payment for invoice ${invoice.id} succeeded.`);
-            console.log('Event data:', event.data);
-            // Here you can update your database to mark the subscription as active
-            break;
-        // Add more cases to handle other event types if needed
-        default:
-            console.log(`Unhandled event type ${event.type}`);
-    }
+  } catch (error) {
+    console.error(`Error processing invoice ${invoice.id}:`, error.message);
+  }
+}
 
-    // Return a response to acknowledge receipt of the event
-    res.json({ received: true });
+// Middleware to parse the raw body for the webhook
+router.post("/", async (req, res) => {
+  console.log("Webhook route set up successfully.");
+  console.log("Received webhook:", req.body);
+  console.log("Headers:", req.headers);
+
+  const sig = req.headers["stripe-signature"];
+  let event;
+
+  try {
+    event = STRIPE.webhooks.constructEvent(
+      req.body,
+      sig,
+      STRIPE_WEBHOOK_SECRET
+    );
+  } catch (err) {
+    console.error(`Webhook signature verification failed: ${err.message}`);
+    return res.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  console.log("Event type:", event.type);
+
+  switch (event.type) {
+    case "invoice.payment_succeeded":
+      await handleInvoicePaymentSucceeded(event.data.object);
+      break;
+
+    // Add more cases to handle other event types if needed
+    default:
+      console.log(`Unhandled event type ${event.type}`);
+  }
+
+  // Return a response to acknowledge receipt of the event
+  res.json({ received: true });
 });
 
 module.exports = router;
