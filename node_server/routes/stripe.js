@@ -73,7 +73,7 @@ router.get('/get-plan/:id',authenticateJWT,async (req, res, next)=>{
 
 
 router.post('/create-subscription',authenticateJWT, async (req, res, next) => {
-    // console.log(req.user)
+    console.log(req.user)
     try {
         const { planType, formData } = req.body;
         
@@ -86,13 +86,11 @@ router.post('/create-subscription',authenticateJWT, async (req, res, next) => {
                 default_payment_method: formData.token,
             },
         });
-        console.log('customer created')
 
         // Attach the payment method to the customer
         await STRIPE.paymentMethods.attach(formData.token, {
             customer: customer.id,
         });
-        console.log('customer payment')
 
         // Set the payment method as the default payment method
         await STRIPE.customers.update(customer.id, {
@@ -101,13 +99,16 @@ router.post('/create-subscription',authenticateJWT, async (req, res, next) => {
             },
         });
 
-        console.log('customer updated')
+   
 
         // console.log(customer)
         const subscription = await STRIPE.subscriptions.create({
             customer: customer.id,
             items: [{ price: 'price_1Q7H9OP0Bii0CHodYPqqqEmd' }],
         });
+
+        const theAccount=await Account.findOne({memberId:req.user.id})
+        console.log(theAccount)
 
         console.log('subs created')
         console.log(subscription)

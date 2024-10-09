@@ -20,7 +20,8 @@ const generateToken = async(member) => {
      resolve(token)
     })
     
-};
+}
+
 
 // Middleware to authenticate using the JWT token from cookies
 const authenticateJWT = (req, res, next) => {

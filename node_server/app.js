@@ -12,6 +12,9 @@ const cookieParser=require('cookie-parser')
 const app = express();
 
 // Middleware
+
+app.use('/webhook', express.raw({ type: 'application/json' }),webhookRoutes);
+// app.use('/webhook', webhookRoutes);
 app.use((req, res, next) => {
     if (req.originalUrl === '/stripe/webhook') {
         next();
@@ -47,7 +50,7 @@ require('./config/passport')
 // Routes
 app.use('/auth', authRoutes);
 app.use('/stripe', stripeRoutes);
-app.use('/stripe', webhookRoutes);
+
 
 // Connect to MongoDB
 mongoose.connect(process.env.db_url, {
