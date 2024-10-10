@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { loadStripe } from "@stripe/stripe-js";
+import error from "./images/mark.png";
 import {
   Elements,
   CardElement,
@@ -129,7 +130,14 @@ const CheckoutForm = () => {
     <div className="checkout-container">
       <h1>Checkout</h1>
 
-      {errorMessage && <div className="error-banner">{errorMessage}</div>}
+      {errorMessage && (
+        <div className="error-banner">
+          <div>
+            <img src={error} alt="error-icom" />
+          </div>
+          {errorMessage}
+        </div>
+      )}
 
       <div className="checkout-content">
         <form className="payment-form" onSubmit={handleSubmit}>
