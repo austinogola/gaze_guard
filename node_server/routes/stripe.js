@@ -114,11 +114,6 @@ router.post("/create-subscription", authenticateJWT, async (req, res) => {
     );
 
     if (existingPayments.length === 0) {
-      theAccount.plan =
-        PLANS[
-          Object.keys(PLANS).find((key) => PLANS[key].id === planType)
-        ].name;
-
       theAccount.payments.push({
         subscriptionId: subscription.id,
         customerId: subscription.customer,
