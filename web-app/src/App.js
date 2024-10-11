@@ -7,6 +7,8 @@ import Usage from "./components/Usage";
 import Settings from "./components/Settings";
 import Plans from "./components/Plans";
 import Checkout from "./components/Checkout";
+import PlansPayments from "./components/plans_payments";
+import ForgotPassword from "./components/forgotPassword";
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/plans" element={<Plans />} />
+        <Route path="/plan-payments" element={<PlansPayments />} />
         <Route path="/usage" element={<Usage />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/checkout" element={<Checkout />} />

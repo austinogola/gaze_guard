@@ -35,7 +35,7 @@ label {
   color: #666;
 }
 
-input[type="text"] {
+.form-group input[type="text"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
