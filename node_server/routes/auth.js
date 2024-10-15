@@ -24,7 +24,7 @@ const generateToken = async (member) => {
 // Middleware to authenticate using the JWT token from cookies
 const authenticateJWT = (req, res, next) => {
   // const token = req.cookies.gg_token;
-  const token = req.headers.authorization;
+  const token = req.headers.authorization?.split(" ")[1];
   if (!token)
     return res.status(401).json({ message: "Unauthorized, token missing" });
 
@@ -88,13 +88,11 @@ router.post("/signup", async (req, res, next) => {
       // res.cookie('gg_token', token, { httpOnly: true });
 
       // Send response
-      res
-        .status(200)
-        .json({
-          message: "User created and logged in",
-          gg_token: token,
-          status: "success",
-        });
+      res.status(200).json({
+        message: "User created and logged in",
+        gg_token: token,
+        status: "success",
+      });
     });
   } catch (err) {
     console.log(err);
@@ -120,13 +118,11 @@ router.post("/login", async (req, res, next) => {
       // res.cookie('auth_token', token, { httpOnly: true });
 
       // Send response
-      res
-        .status(200)
-        .json({
-          message: "Logged in successfully",
-          gg_token: token,
-          status: "success",
-        });
+      res.status(200).json({
+        message: "Logged in successfully",
+        gg_token: token,
+        status: "success",
+      });
     });
   })(req, res, next);
 });
@@ -269,19 +265,17 @@ router.post("/api/usage", authenticateJWT, async (req, res) => {
       .status(200)
       .json({ status: "success", message: "Updated", new_state: config_data });
   } catch (err) {
-    res
-      .status(500)
-      .json({
-        error: "An error occurred while updating usage",
-        details: err.message,
-      });
+    res.status(500).json({
+      error: "An error occurred while updating usage",
+      details: err.message,
+    });
   }
 });
 
 // Route to fetch user plans
 router.get("/api/user/plans", authenticateJWT, async (req, res) => {
   try {
-    const userId = req.user._id;
+    const userId = req.user.id; // Use 'id' instead of '_id'
 
     const account = await Account.findOne({ memberId: userId });
     if (!account) {
@@ -290,12 +284,14 @@ router.get("/api/user/plans", authenticateJWT, async (req, res) => {
         .json({ message: "No account found for this user" });
     }
 
-    res.json(account);
+    res.status(200).json({
+      message: "User account found",
+      payments: account.payments,
+      plan: account.plan,
+    });
   } catch (error) {
     res.status(500).json({ message: "Server error", error });
   }
 });
-
-module.exports = router;
 
 module.exports = router;

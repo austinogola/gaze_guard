@@ -1,0 +1,77 @@
+.billing-page {
+  display: flex;
+  background-color: #f9fafc;
+  height: 100vh;
+}
+
+.side-menu {
+  width: 240px;
+  background-color: #fff;
+  border-right: 1px solid #e1e4e8;
+  padding: 20px;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu li {
+  padding: 12px 20px;
+  cursor: pointer;
+  color: #4a4f55;
+}
+
+.side-menu li.active {
+  background-color: #eef2f6;
+  border-left: 4px solid #007bff;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 40px;
+}
+
+.plan-details {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.plan-overview {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.btn-upgrade {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.payment-methods {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.payment-method {
+  padding: 10px 0;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.btn-add-method {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
