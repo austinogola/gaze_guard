@@ -17,7 +17,7 @@ const ForgotPassword = () => {
 
   return (
     <div className="forgot-password-container">
-      <div className="backgroundImage">
+      <div className="forgotPassword_backgroundImage">
         <img src={background} alt="backgroung-img" />
       </div>
       <div className="forgot-password-card">
