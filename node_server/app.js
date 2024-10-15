@@ -16,6 +16,7 @@ app.use("/webhook", express.raw({ type: "application/json" }), webhookRoutes);
 // Middleware
 const allowedOrigins = [
   "http://localhost:3000",
+  "http://127.0.0.1:3000",
   "https://app.gazeguard.io",
   "https://www.app.gazeguard.io",
   "https://www.gazeguard.io",

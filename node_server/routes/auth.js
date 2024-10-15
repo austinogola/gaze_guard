@@ -118,9 +118,12 @@ router.post('/logout', (req, res) => {
 });
 
 const plans_objects={
-    "free":{"images":100,"video":100},
-    "basic":{"images":"unlimited","video":200},
-    "pro":{"images":'unlimited',"video":'unlimited'}
+    "free":{"images":60,"video":5},
+    "Free":{"images":60,"video":5},
+    "Premium":{"images":"unlimited","video":200},
+    "premium":{"images":"unlimited","video":200},
+    "Deluxe":{"images":'unlimited',"video":'unlimited'},
+    "deluxe":{"images":'unlimited',"video":'unlimited'}
     }
 
 function getMemberUsageRemnants(the_account) {
@@ -129,8 +132,11 @@ function getMemberUsageRemnants(the_account) {
     const startOfTomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1).getTime();
 
     // const accountData = the_account.toObject();  // Assuming we're working with Mongoose, convert document to JS object
+    
     const plan = the_account.plan;
     const usage = the_account.usage;
+    console.log(the_account)
+    console.log(plan)
 
     const maxImages = plans_objects[plan]["images"];
     const maxMinutes = plans_objects[plan]["video"];
@@ -140,12 +146,12 @@ function getMemberUsageRemnants(the_account) {
 
     if (typeof maxImages === 'number') {
         // Filter for today's images
-        console.log('allimages',usage)
+        // console.log('allimages',usage)
         const imagesToday = usage.filter(obj => {
             return obj.time_added >= startOfToday && obj.time_added < startOfTomorrow && obj.type === 'image';
         });
-        console.log('imagesToday',imagesToday)
-        console.log('startOfToday',startOfToday,'startOfTomorrow',startOfTomorrow)
+        // console.log('imagesToday',imagesToday)
+        // console.log('startOfToday',startOfToday,'startOfTomorrow',startOfTomorrow)
         remainingImages = maxImages - imagesToday.length;
     }
 
@@ -201,7 +207,7 @@ router.post('/api/usage', authenticateJWT, async (req, res) => {
            await account.save();
         }else{
             const prev_obj = account.usage.find(obj => obj.type === 'video' && obj.gg_src === gg_src);
-            console.log(prev_obj)
+            // console.log(prev_obj)
             if (!prev_obj) {
                 account.usage.push({
                     time_added: time_added,  // You can replace this with the appropriate time value

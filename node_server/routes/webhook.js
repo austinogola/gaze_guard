@@ -9,8 +9,33 @@ const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 const STRIPE = new Stripe(STRIPE_SECRET_KEY);
 
+
+const PLANS = {
+  Free: {
+    name: "Free",
+    price: 0,
+    images: "60 Minutes/Day",
+    video: "5 Minutes/Day",
+    id: "free",
+  },
+  Premium: {
+    name: "Premium",
+    price: 6.0,
+    images: "Unlimited Minutes/Day",
+    video: "45 Minutes/Day",
+    id: "price_1Q7H9OP0Bii0CHodYPqqqEmd",
+  },
+  Deluxe: {
+    name: "Deluxe",
+    price: 9.9,
+    images: "Unlimited Minutes/Day",
+    video: "Unlimited Minutes/Day",
+    id: "price_1Q7HBFP0Bii0CHodsHrXHIEt",
+  },
+};
+
 async function handleInvoicePaymentSucceeded(invoice) {
-  console.log("Invoice payment succeeded:", invoice);
+  // console.log("Invoice payment succeeded:", invoice);
 
   try {
     const subscriptionId = invoice.subscription;
