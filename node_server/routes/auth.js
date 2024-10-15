@@ -135,8 +135,8 @@ function getMemberUsageRemnants(the_account) {
     
     const plan = the_account.plan;
     const usage = the_account.usage;
-    console.log(the_account)
-    console.log(plan)
+    // console.log(the_account)
+    console.log(plan,the_account.plan)
 
     const maxImages = plans_objects[plan]["images"];
     const maxMinutes = plans_objects[plan]["video"];

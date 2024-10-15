@@ -71,7 +71,7 @@
   /* Specify the correct path to the font files */
 }
 
-*.title {
+*.title ,.h1TextDiv{
   font-family: "MonumentExtended";
 }
 
