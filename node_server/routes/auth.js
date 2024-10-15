@@ -176,13 +176,13 @@ function getMemberUsageRemnants(the_account) {
 router.get('/api/config', authenticateJWT, async (req, res) => {
     console.log('checking config')
     const account = await Account.findOne({ memberId: req.user.id });
-    console.log(account)
+    // console.log(account)
     if (!account) {
         return res.status(404).json({ message: 'Account not found' });
     }
 
     let config_data=getMemberUsageRemnants(account)
-    return res.status(200).json({'status': 'success', 'data':config_data})
+    return res.status(200).json({'status': 'success', 'data':config_data,plan:account.plan})
 })
 
 router.post('/api/usage', authenticateJWT, async (req, res) => {
